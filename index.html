@@ -96,12 +96,7 @@
                                  <img src="images/bot_1409.jpg" alt="Kit 1409" class="kit-img" />
                               </button>
                               <div class="kit-label">Kit 1409</div>
-                             <!-- Botones de expansión -->
-                             <div class="expansion-buttons d-flex flex-column align-items-center mt-2">
-                                <button class="btn btn-sm btn-outline-secondary mb-1" style="width: 110px;">Expansión A</button>
-                                <button class="btn btn-sm btn-outline-secondary mb-1" style="width: 110px;">Expansión B</button>
-                                <button class="btn btn-sm btn-outline-secondary" style="width: 110px;">Expansión C</button>
-                             </div>
+                              <button class="btn btn-sm btn-outline-light mt-2" onclick="document.querySelector('.carolo_text .number_text:nth-child(1)').closest('h3').scrollIntoView ? document.querySelectorAll('.carolo_text .number_text')[4].closest('h3').scrollIntoView({behavior: 'smooth'}) : document.getElementById('kit-1409-exp').scrollIntoView({behavior: 'smooth'});" style="width: 110px;">Expansiones</button>
                            </div>
                         </div>
                      </div>
@@ -249,16 +244,58 @@ Pensamiento de IA desde el inicio: ejercitá programación y depuración (debugg
             <div class="models_section_2">
                <div class="row">
                   <div class="col-md-6">
-                     <div class="models_img"><img src="images/img-1.png"></div>
+                     <div class="models_img"><img src="images/kit1409base.png" alt="Kit 1409" /></div>
                   </div>
                   <div class="col-md-6">
                      <h3 class="carolo_text"><span class="number_text">04</span> Kit 1409</h3>
-                        <p class="ullamco_text">Armá y programá 14 robots (y muchos más a tu gusto) con piezas de encastre y controlador. Incluye 2 cajas reductoras planetarias 50X, servo táctico y sensor ultrasónico para proyectos potentes y precisos.
-
-   Programación fácil con MakeCode (bloques) y evolución a Python/JavaScript.
-
-   Carga de código por USB o Bluetooth Low Energy.</p>
+                     <p class="ullamco_text">
+                        Armá y programá 14 robots (y muchos más a tu gusto) con piezas de encastre y controlador. Incluye 2 cajas reductoras planetarias 50X, servo táctico y sensor ultrasónico para proyectos potentes y precisos.<br><br>
+                        Programación fácil con MakeCode (bloques) y evolución a Python/JavaScript.<br><br>
+                        Carga de código por USB o Bluetooth Low Energy.
+                     </p>
                      <div class="price_main">
+                        <div class="vermas_btn"><a href="#" class="btn-vermas" id="vermas-1409">Ver más</a></div>
+                        <div class="read_btn"><a href="#">¡Contactanos!<span class="arrow_icon"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span></a></div>
+                     </div>
+                     <div class="kit-extra-info" id="kit-extra-1409" style="display:none;">
+                        <div class="extra-content">
+                           <h4>¿Qué incluye el Kit 1409?</h4>
+                           <ul>
+                              <li>Controlador programable</li>
+                              <li>2 cajas reductoras planetarias 50X</li>
+                              <li>Servo táctico</li>
+                              <li>Sensor ultrasónico</li>
+                              <li>Piezas de encastre para 14 robots y más</li>
+                              <li>Guía de actividades y desafíos</li>
+                           </ul>
+                           <div class="extra-video">
+                              <iframe width="100%" height="240" src="https://www.youtube.com/embed/oCfRSa3M5Bg?start=197" title="Kit 1409 Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                           </div>
+                           <p>El Kit 1409 permite experimentar con robótica, sensores y programación avanzada, ideal para proyectos potentes y precisos.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="models_section_2">
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="models_img"><img src="images/expan.png" alt="Kit 1409" /></div>
+                  </div>
+                  <div class="col-md-6">
+                     <h3 class="carolo_text" id="kit-1409-exp"><span class="number_text">05</span> Kit 1409 EXPANSIONES</h3>
+                     <p class="ullamco_text">
+1409-A: SENSOR EXPANSION PACK:<br>
+14 proyectos temáticos extra. Programación “con color”: sumá un LED RGB para crear efectos y feedback visual, y un sensor de color para clasificar objetos por tono y tomar decisiones en tus programas.<br><br>
+1409-B: SMART AI LENS KIT.<br>
+Kit de IA para micro:bit: tu robot, ahora realmente “inteligente” Visión AI lista para usar: con la lente AI tu robot reconoce 41 cartas, pelota azul/roja, sigue líneas, rastrea objetos y hasta detecta rostros.<br><br>
+1409-C: Pixetto AI KIT:<br>
+Kit VIA Pixetto AI para micro:bit: poné “ojos inteligentes” a tus robots<br><br>
+Visión AI ultra-gran angular (90°): la lente capta la escena completa y envía datos por cable a la micro:bit para respuestas rápidas y estables.<br><br>
+Funciones listas para usar: reconocimiento de tarjetas, seguimiento de línea/objetos/pelotas, detección de color y seguimiento de rostro.
+                     </p>
+                     <div class="price_main">
+                        <div class="vermas_btn"><a href="#" class="btn-vermas" id="vermas-1409-exp">Ver más</a></div>
                         <div class="read_btn"><a href="#">¡Contactanos!<span class="arrow_icon"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span></a></div>
                      </div>
                   </div>
@@ -379,8 +416,6 @@ Pensamiento de IA desde el inicio: ejercitá programación y depuración (debugg
          </button>
          <!-- copyright section start -->
 
-    </body>
-</html>
       <!-- Javascript files-->
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>
@@ -469,5 +504,27 @@ Pensamiento de IA desde el inicio: ejercitá programación y depuración (debugg
                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
          </script>
+         <script>
+// Mostrar info extra Kit 1409
+   document.addEventListener('DOMContentLoaded', function() {
+      var btn1409 = document.getElementById('vermas-1409');
+      var extra1409 = document.getElementById('kit-extra-1409');
+      if(btn1409 && extra1409) {
+         btn1409.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (extra1409.style.display === 'block') {
+               extra1409.style.display = 'none';
+               btn1409.textContent = 'Ver más';
+            } else {
+               extra1409.style.display = 'block';
+               btn1409.textContent = 'Ver menos';
+            }
+         });
+         // Inicialmente oculto
+         extra1409.style.display = 'none';
+         btn1409.textContent = 'Ver más';
+      }
+   });
+</script>
    </body>
 </html>
