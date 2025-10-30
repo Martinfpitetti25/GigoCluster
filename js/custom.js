@@ -309,12 +309,81 @@ $(function () {
        });
      });
 
+     });
+
      /* Product slider 
      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
      // optional
      $('#blogCarousel').carousel({
         interval: 5000
      });
+
+     /* Course cards - Mostrar información de curso */
+     $(document).ready(function() {
+        $('.course-card').on('click', function() {
+           const courseId = $(this).data('course');
+           const courseInfo = {
+              'curso1': {
+                 title: 'Programación Inicial',
+                 description: 'Aprende los fundamentos de la programación desde cero con ejercicios prácticos y proyectos reales.',
+                 duration: '8 semanas',
+                 level: 'Principiante'
+              },
+              'curso2': {
+                 title: 'Robótica Educativa',
+                 description: 'Descubre cómo construir y programar robots para educación y competencias.',
+                 duration: '10 semanas',
+                 level: 'Intermedio'
+              },
+              'curso3': {
+                 title: 'Impresión 3D',
+                 description: 'Domina el modelado y la impresión 3D para crear prototipos y piezas funcionales.',
+                 duration: '6 semanas',
+                 level: 'Principiante'
+              },
+              'curso4': {
+                 title: 'Internet de las Cosas',
+                 description: 'Conecta dispositivos y sensores para crear soluciones inteligentes IoT.',
+                 duration: '12 semanas',
+                 level: 'Intermedio'
+              },
+              'curso5': {
+                 title: 'STEAM para Docentes',
+                 description: 'Capacitación en metodologías STEAM para potenciar el aprendizaje en el aula.',
+                 duration: '8 semanas',
+                 level: 'Todos los niveles'
+              },
+              'curso6': {
+                 title: 'Arduino y Electrónica',
+                 description: 'Aprende a programar placas Arduino y a crear circuitos electrónicos interactivos.',
+                 duration: '10 semanas',
+                 level: 'Intermedio'
+              },
+              'curso7': {
+                 title: 'Desarrollo de Apps',
+                 description: 'Crea tus propias aplicaciones móviles desde la idea hasta la publicación.',
+                 duration: '14 semanas',
+                 level: 'Intermedio'
+              },
+              'curso8': {
+                 title: 'Ciberseguridad Básica',
+                 description: 'Conoce los principios de la seguridad informática y cómo proteger tus datos.',
+                 duration: '6 semanas',
+                 level: 'Principiante'
+              }
+           };
+
+           if (courseInfo[courseId]) {
+              const info = courseInfo[courseId];
+              alert('📚 ' + info.title + '\n\n' + 
+                    info.description + '\n\n' +
+                    '⏱️ Duración: ' + info.duration + '\n' +
+                    '📊 Nivel: ' + info.level);
+           }
+        });
+     });
+
+});
 
 
 });

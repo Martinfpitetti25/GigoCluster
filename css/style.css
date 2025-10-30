@@ -286,6 +286,493 @@
 .navbar-nav.text-uppercase .nav-btn {
     text-transform: uppercase;
 }
+
+/* Tarjetas de información horizontales en sección Conocenos */
+.info-card-horizontal {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+    margin-bottom: 30px;
+}
+.info-card-horizontal:hover {
+    box-shadow: 0 12px 32px rgba(255,152,0,0.18);
+}
+.info-card-img-horizontal {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.info-card-img-horizontal img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.info-card-img-horizontal:hover img {
+    transform: scale(1.1);
+}
+.info-card-body-horizontal {
+    padding: 40px;
+}
+.info-card-title-horizontal {
+    color: #ff9800;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.info-card-subtitle-horizontal {
+    color: #555;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 18px;
+    font-style: italic;
+    border-left: 4px solid #ff9800;
+    padding-left: 14px;
+}
+.info-card-text-horizontal {
+    color: #666;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin: 0;
+    text-align: justify;
+}
+
+/* Estilos especiales para la tarjeta ISAE */
+.isae-card {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+}
+.isae-image-column {
+    padding: 20px;
+}
+.isae-img-item {
+    margin-bottom: 25px;
+}
+.isae-img-item:last-child {
+    margin-bottom: 0;
+}
+.isae-img-wrapper {
+    width: 100%;
+    height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    transition: all 0.4s ease;
+    position: relative;
+}
+.isae-img-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+.isae-img-wrapper:hover::before {
+    opacity: 1;
+}
+.isae-img-wrapper:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(255,152,0,0.2);
+}
+.isae-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.isae-img-wrapper:hover img {
+    transform: scale(1.08);
+}
+.isae-img-caption {
+    margin-top: 10px;
+    padding: 0 10px;
+    color: #555;
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.5;
+    text-align: center;
+    border-left: 3px solid #ff9800;
+    padding-left: 12px;
+    text-align: left;
+}
+.isae-highlights {
+    margin-top: 25px;
+}
+.highlight-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.highlight-item:hover {
+    transform: translateX(8px);
+    box-shadow: 0 4px 12px rgba(255,152,0,0.12);
+}
+.highlight-icon {
+    font-size: 2rem;
+    color: #ff9800;
+    margin-right: 15px;
+    min-width: 40px;
+}
+.highlight-content h6 {
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.highlight-content p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Estilos para la tarjeta CLÚSTER */
+.cluster-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+}
+.cluster-image-column {
+    padding: 20px;
+}
+.cluster-img-item {
+    margin-bottom: 25px;
+}
+.cluster-img-item:last-child {
+    margin-bottom: 0;
+}
+.cluster-img-wrapper {
+    width: 100%;
+    height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    transition: all 0.4s ease;
+    border: 3px solid transparent;
+}
+.cluster-img-wrapper:hover {
+    transform: translateX(8px);
+    box-shadow: 0 12px 32px rgba(33,150,243,0.25);
+    border-color: #2196F3;
+}
+.cluster-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+.cluster-img-wrapper:hover img {
+    transform: scale(1.08);
+}
+.cluster-img-caption {
+    margin-top: 10px;
+    padding: 0 10px;
+    color: #555;
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.5;
+    border-left: 3px solid #2196F3;
+    padding-left: 12px;
+}
+.cluster-features {
+    margin-top: 25px;
+}
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 18px;
+    background: linear-gradient(135deg, #fff 0%, #f0f8ff 100%);
+    border-radius: 12px;
+    border-left: 4px solid #2196F3;
+    transition: all 0.3s ease;
+}
+.feature-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 6px 16px rgba(33,150,243,0.15);
+}
+.feature-icon-box {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+.feature-icon-box i {
+    font-size: 1.5rem;
+    color: #fff;
+}
+.feature-content h6 {
+    color: #1976D2;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.feature-content p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Estilos para la tarjeta IDENTIDAD */
+.identidad-card {
+    background: linear-gradient(135deg, #fff 0%, #fffef7 100%);
+}
+.identidad-image-column {
+    padding: 20px;
+}
+.identidad-img-item {
+    margin-bottom: 25px;
+}
+.identidad-img-item:last-child {
+    margin-bottom: 0;
+}
+.identidad-img-wrapper {
+    width: 100%;
+    height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    transition: all 0.4s ease;
+    position: relative;
+    border: 3px solid transparent;
+}
+.identidad-img-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,193,7,0.2) 0%, rgba(255,152,0,0.2) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+.identidad-img-wrapper:hover::after {
+    opacity: 1;
+}
+.identidad-img-wrapper:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 32px rgba(255,152,0,0.25);
+    border-color: #FFC107;
+}
+.identidad-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.identidad-img-caption {
+    margin-top: 10px;
+    padding: 0 10px;
+    color: #555;
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.5;
+    border-left: 3px solid #FFC107;
+    padding-left: 12px;
+}
+.identidad-values {
+    margin-top: 25px;
+}
+.value-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 14px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    border: 2px solid #f5f5f5;
+    transition: all 0.3s ease;
+}
+.value-card:hover {
+    border-color: #FFC107;
+    box-shadow: 0 8px 20px rgba(255,193,7,0.15);
+    transform: translateY(-5px);
+}
+.value-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.value-header i {
+    font-size: 1.5rem;
+    color: #FFC107;
+    margin-right: 12px;
+}
+.value-header h6 {
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+.value-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Estilos para la sección de Equipo de Gestión */
+.team-section {
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+.team-header {
+    margin-bottom: 40px;
+}
+.team-title {
+    color: #2196F3;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+.team-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #2196F3 0%, #1976D2 100%);
+    border-radius: 2px;
+}
+.team-subtitle {
+    color: #666;
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-top: 20px;
+}
+.team-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    height: 100%;
+}
+.team-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+.team-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
+.team-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.team-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 20px;
+}
+.team-card:hover .team-overlay {
+    opacity: 1;
+}
+.team-social {
+    display: flex;
+    gap: 15px;
+}
+.team-social a {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2196F3;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+.team-social a:hover {
+    background: #2196F3;
+    color: #fff;
+    transform: translateY(-5px);
+}
+.team-info {
+    padding: 25px 20px;
+    text-align: center;
+}
+.team-name {
+    color: #333;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+.team-role {
+    color: #2196F3;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.team-description {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Estilos especiales para la tarjeta del Director */
+.director-card {
+    position: relative;
+}
+.director-card:hover {
+    transform: translateY(-20px);
+}
+.director-img {
+    height: 350px;
+}
+.director-info {
+    padding: 30px 25px;
+}
+.director-name {
+    font-size: 1.6rem;
+    color: #2196F3;
+}
+.director-role {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
 /*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
 
 
@@ -1367,6 +1854,63 @@ textarea#comment::placeholder {
 
 .margin_top90 {
     margin-top: 90px;
+}
+
+/* Sección Capacitaciones tecno-aliados */
+.capacitaciones-card {
+    background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+}
+
+.courses-grid {
+    margin-top: 20px;
+}
+
+.course-card {
+    background: #fff;
+    border: 2px solid #ff9800;
+    border-radius: 16px;
+    padding: 20px 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(255, 152, 0, 0.25);
+    border-color: #e67c00;
+}
+
+.course-img-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fffbe8;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.course-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.course-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ff9800;
+    margin: 0;
+    line-height: 1.3;
 }
 
 /* ROBOTICA DE COMPETICIÓN */
