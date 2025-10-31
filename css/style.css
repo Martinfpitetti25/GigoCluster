@@ -4,6 +4,62 @@ html, body {
     padding: 0 !important;
 }
 
+/* Badges informativos para kits */
+.kit-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.kit-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #fff;
+    border: 1.5px solid #ff9800;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(255, 152, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.kit-badge:hover {
+    background: #fff8e1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 152, 0, 0.2);
+}
+
+.kit-badge-icon {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.kit-badge.edad { border-color: #4caf50; }
+.kit-badge.edad:hover { background: #e8f5e9; }
+
+.kit-badge.compatibilidad { border-color: #2196f3; }
+.kit-badge.compatibilidad:hover { background: #e3f2fd; }
+
+.kit-badge.requerimientos { border-color: #9c27b0; }
+.kit-badge.requerimientos:hover { background: #f3e5f5; }
+
+/* Responsive badges */
+@media (max-width: 576px) {
+    .kit-badge {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+        gap: 4px;
+    }
+    .kit-badge-icon {
+        font-size: 1rem;
+    }
+}
+
 /* Video responsivo en info extra Kit 1205 */
 .extra-video {
     margin: 18px 0 10px 0;
@@ -22,27 +78,89 @@ html, body {
 }
 /* Info extra Kit 1205 */
 .kit-extra-info {
-    background: #fffbe8;
+    background: linear-gradient(135deg, #fffbf0 0%, #fff8e1 100%);
     border: 2px solid #ff9800;
-    border-radius: 18px;
-    margin: 22px 0 0 0;
-    padding: 24px 18px 18px 18px;
-    box-shadow: 0 2px 12px 0 rgba(255,152,0,0.08);
-    transition: max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.4s;
+    border-radius: 20px;
+    margin: 40px 0 0 0;
+    padding: 40px;
+    box-shadow: 0 8px 24px rgba(255, 152, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
 }
+
+.kit-extra-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff9800, #ffa726, #ff9800);
+    background-size: 200% 100%;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.kit-extra-info .extra-content {
+    position: relative;
+    z-index: 1;
+}
+
 .kit-extra-info .extra-content h4 {
-    color: #ff9800;
-    margin-bottom: 12px;
+    color: #e65100;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #ff9800;
+    padding-bottom: 12px;
+    display: inline-block;
 }
+
 .kit-extra-info ul {
-    margin-bottom: 16px;
-    padding-left: 20px;
+    margin-bottom: 20px;
+    padding-left: 0;
+    list-style: none;
 }
+
 .kit-extra-info li {
-    margin-bottom: 6px;
+    margin-bottom: 12px;
     font-size: 1.05rem;
+    padding-left: 32px;
+    position: relative;
+    line-height: 1.6;
+    color: #333;
 }
+
+.kit-extra-info li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #ff9800;
+    font-size: 1.3rem;
+    font-weight: bold;
+    top: -2px;
+}
+
+.kit-extra-info p {
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-top: 20px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.6);
+    border-left: 4px solid #ff9800;
+    border-radius: 8px;
+}
+
 .kit-extra-info .extra-images {
     display: flex;
     gap: 18px;
@@ -50,34 +168,88 @@ html, body {
     justify-content: center;
     align-items: center;
 }
+
 .kit-extra-info .extra-img {
     width: 120px;
-    border-radius: 12px;
-    border: 1.5px solid #ff9800;
+    border-radius: 16px;
+    border: 2px solid #ff9800;
     background: #fff;
-    box-shadow: 0 2px 8px 0 rgba(255,152,0,0.08);
+    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.kit-extra-info .extra-img:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(255, 152, 0, 0.25);
+}
+
+.kit-extra-info .extra-video {
+    margin-top: 20px;
+}
+
+.kit-extra-info .extra-video iframe {
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    border: 2px solid #ff9800;
 }
 /* Botón 'Ver más' para kits */
 .btn-vermas {
-    display: inline-block;
-    background: #fff;
-    color: #ff9800;
-    border: 2px solid #ff9800;
-    border-radius: 24px;
-    padding: 10px 28px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 8px 0 rgba(255,152,0,0.08);
-    margin-right: 18px;
-}
-.btn-vermas:hover {
-    background: #ff9800;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #ff9800 0%, #fb8c00 100%);
     color: #fff;
-    box-shadow: 0 4px 16px 0 rgba(255,152,0,0.18);
+    border: none;
+    border-radius: 30px;
+    padding: 12px 32px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+    margin-right: 18px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-vermas::after {
+    content: '▼';
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-vermas.expanded::after {
+    transform: rotate(180deg);
+}
+
+.btn-vermas::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-vermas:hover::before {
+    left: 100%;
+}
+
+.btn-vermas:hover {
+    background: linear-gradient(135deg, #f57c00 0%, #ef6c00 100%);
+    color: #fff;
+    box-shadow: 0 6px 25px rgba(255, 152, 0, 0.4);
+    transform: translateY(-2px);
     text-decoration: none;
+}
+
+.btn-vermas:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 12px rgba(255, 152, 0, 0.3);
 }
 /* Alinear botones en Kit 1205 */
 .price_main {
@@ -85,6 +257,7 @@ html, body {
     align-items: center;
     justify-content: space-between;
     gap: 18px;
+    margin-top: 24px;
 }
 .vermas_btn {
     margin-right: auto;
@@ -92,27 +265,33 @@ html, body {
 .read_btn {
     margin-left: auto;
 }
-/* Botón 'Ver más' para kits */
-.btn-vermas {
-    display: inline-block;
-    background: #fff;
-    color: #ff9800;
-    border: 2px solid #ff9800;
-    border-radius: 24px;
-    padding: 10px 28px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 8px 0 rgba(255,152,0,0.08);
+
+/* Estilos responsive para contenido expandible */
+@media (max-width: 768px) {
+    .kit-extra-info {
+        padding: 24px;
+        margin: 24px 0 0 0;
+    }
+    
+    .kit-extra-info .extra-content h4 {
+        font-size: 1.3rem;
+    }
+    
+    .kit-extra-info li {
+        font-size: 0.95rem;
+        padding-left: 28px;
+    }
+    
+    .kit-extra-info .extra-img {
+        width: 100px;
+    }
+    
+    .btn-vermas {
+        padding: 10px 24px;
+        font-size: 0.85rem;
+    }
 }
-.btn-vermas:hover {
-    background: #ff9800;
-    color: #fff;
-    box-shadow: 0 4px 16px 0 rgba(255,152,0,0.18);
-    text-decoration: none;
-}
+
 /* Botón flotante para volver al principio */
 #btn-scroll-top {
     display: none;
@@ -678,6 +857,8 @@ html, body {
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     transition: all 0.4s ease;
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 .team-card:hover {
     transform: translateY(-15px);
@@ -687,7 +868,9 @@ html, body {
     position: relative;
     width: 100%;
     height: 280px;
+    min-height: 280px;
     overflow: hidden;
+    flex-shrink: 0;
 }
 .team-img-wrapper img {
     width: 100%;
@@ -735,26 +918,38 @@ html, body {
 .team-info {
     padding: 25px 20px;
     text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 .team-name {
     color: #333;
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     font-weight: 700;
     margin-bottom: 8px;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .team-role {
     color: #2196F3;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     margin-bottom: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .team-description {
     color: #666;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     line-height: 1.6;
     margin: 0;
+    flex-grow: 1;
 }
 
 /* Estilos especiales para la tarjeta del Director */
