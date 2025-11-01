@@ -82,37 +82,49 @@
                      <h1 class="banner_taital">GiGo</h1>
                      <p class="banner_text">Gigotoys, Empresa taiwanesa especializada en robotica educativa y con multiples logros a nivel mundial.Con el objetivo constante de brindar alegría a través del aprendizaje, implantamos la intención educativa de forma imperceptible a través del juego. “Ayudar a los niños a disfrutar el aprendizaje”</p>
                      <div class="kit-buttons">
-                        <div class="row justify-content-center">
-                           <div class="col kit-btn-col">
+                        <!-- Primera fila: 3 kits -->
+                        <div class="row">
+                           <div class="kit-btn-col">
                               <button class="kit-btn" onclick="document.getElementById('kit-1205').scrollIntoView({behavior: 'smooth'});">
                                  <img src="images/bot_1205.jpg" alt="Kit 1205" class="kit-img" />
                               </button>
                               <div class="kit-label">Kit: Robótica y Programación Creativa 2.0</div>
                            </div>
-                           <div class="col kit-btn-col">
+                           <div class="kit-btn-col">
                               <button class="kit-btn" onclick="document.getElementById('kit-1269').scrollIntoView({behavior: 'smooth'});">
                                  <img src="images/bot_1269.jpg" alt="Kit 1269" class="kit-img" />
                               </button>
                               <div class="kit-label">Kit: RoboLab 2.0</div>
                            </div>
-                           <div class="col kit-btn-col">
+                           <div class="kit-btn-col">
                               <button class="kit-btn" onclick="document.getElementById('kit-1300').scrollIntoView({behavior: 'smooth'});">
                                  <img src="images/bot_1300.jpg" alt="Kit 1300" class="kit-img" />
                               </button>
                               <div class="kit-label">Kit: ¡La fabrica del futuro!</div>
                            </div>
-                           <div class="col kit-btn-col">
-                              <button class="kit-btn" onclick="document.querySelector('.carolo_text .number_text:nth-child(1)').closest('h3').scrollIntoView ? document.querySelectorAll('.carolo_text .number_text')[3].closest('h3').scrollIntoView({behavior: 'smooth'}) : document.getElementById('kit-1409').scrollIntoView({behavior: 'smooth'});">
+                        </div>
+                        <!-- Segunda fila: 3 kits -->
+                        <div class="row">
+                           <div class="kit-btn-col">
+                              <button class="kit-btn" onclick="document.getElementById('kit-1409').scrollIntoView({behavior: 'smooth'});">
                                  <img src="images/bot_1409.jpg" alt="Kit 1409" class="kit-img" />
                               </button>
                               <div class="kit-label">Kit Academia de Robots micro:bit</div>
-                              <button class="btn btn-sm btn-outline-light mt-2" onclick="document.querySelector('.carolo_text .number_text:nth-child(1)').closest('h3').scrollIntoView ? document.querySelectorAll('.carolo_text .number_text')[4].closest('h3').scrollIntoView({behavior: 'smooth'}) : document.getElementById('kit-1409-exp').scrollIntoView({behavior: 'smooth'});" style="width: 110px;">Expansiones</button>
+                              <button class="expansion-btn" onclick="document.getElementById('expansiones').scrollIntoView({behavior: 'smooth'});">
+                                 Expansiones
+                              </button>
                            </div>
-                           <div class="col kit-btn-col">
+                           <div class="kit-btn-col">
                               <button class="kit-btn" onclick="document.getElementById('kit-1204rr').scrollIntoView({behavior: 'smooth'});">
                                  <img src="images/bot_1204rr.jpg" alt="Kit 1204RR" class="kit-img" />
                               </button>
-                              <div class="kit-label">Kit 1204rr</div>
+                              <div class="kit-label">Kit 1204RR</div>
+                           </div>
+                           <div class="kit-btn-col">
+                              <button class="kit-btn" onclick="document.getElementById('kit-1410').scrollIntoView({behavior: 'smooth'});">
+                                 <img src="images/bot_1410.jpg" alt="Kit 1410" class="kit-img" />
+                              </button>
+                              <div class="kit-label">Kit 1410</div>
                            </div>
                         </div>
                      </div>
@@ -375,14 +387,7 @@ Pensamiento de IA desde el inicio: ejercitá programación y depuración (debugg
                   <div class="col-md-6">
                      <h3 class="carolo_text" id="kit-1409-exp"><span class="number_text">05</span> Kit 1409 EXPANSIONES</h3>
                      <p class="ullamco_text">
-1409-A: SENSOR EXPANSION PACK:<br>
-14 proyectos temáticos extra. Programación “con color”: sumá un LED RGB para crear efectos y feedback visual, y un sensor de color para clasificar objetos por tono y tomar decisiones en tus programas.<br><br>
-1409-B: SMART AI LENS KIT.<br>
-Kit de IA para micro:bit: tu robot, ahora realmente “inteligente” Visión AI lista para usar: con la lente AI tu robot reconoce 41 cartas, pelota azul/roja, sigue líneas, rastrea objetos y hasta detecta rostros.<br><br>
-1409-C: Pixetto AI KIT:<br>
-Kit VIA Pixetto AI para micro:bit: poné “ojos inteligentes” a tus robots<br><br>
-Visión AI ultra-gran angular (90°): la lente capta la escena completa y envía datos por cable a la micro:bit para respuestas rápidas y estables.<br><br>
-Funciones listas para usar: reconocimiento de tarjetas, seguimiento de línea/objetos/pelotas, detección de color y seguimiento de rostro.
+                        Expansiones para el Kit Academia de Robots micro:bit (1409). Incluye piezas y accesorios para crear más modelos y proyectos avanzados con el controlador micro:bit.  
                      </p>
                      <div class="price_main">
                         <div class="vermas_btn"><a href="#" class="btn-vermas" id="vermas-1409-exp">Ver más</a></div>
@@ -453,6 +458,65 @@ Armá 40 modelos, usá sensores y servos (360°/180°) y controlalos con el Gigo
            </div>
          </div>
          <!-- Kit 1204RR section end -->
+         
+         <!-- Kit 1410 section start -->
+         <div class="models_section_2">
+           <div class="container">
+             <div class="row">
+                <div class="col-md-6">
+                   <div class="models_img"><img src="images/bot_1410.jpg" alt="Kit 1410" /></div>
+                </div>
+                <div class="col-md-6">
+                   <h3 class="carolo_text" id="kit-1410"><span class="number_text">1410</span> Kit 1410</h3>
+                   <div class="kit-tags mb-3">
+                      <span class="kit-tag kit-tag-age"><i class="fa fa-child"></i> 12+ años</span>
+                      <span class="kit-tag kit-tag-pc kit-tag-required"><i class="fa fa-laptop"></i> Requiere PC</span>
+                      <span class="kit-tag kit-tag-compat"><i class="fa fa-microchip"></i> Programación avanzada</span>
+                      <span class="kit-tag kit-tag-req"><i class="fa fa-cogs"></i> Múltiples sensores</span>
+                   </div>
+                   <p class="ullamco_text">
+                      Descripción del Kit 1410. Este kit ofrece características avanzadas para proyectos de robótica educativa.
+                   </p>
+                   <div class="price_main">
+                      <div class="vermas_btn"><a href="#" class="btn-vermas" id="vermas-1410">Ver más</a></div>
+                      <div class="read_btn"><a href="#">¡Contactanos!<span class="arrow_icon"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></span></a></div>
+                   </div>
+                </div>
+             </div>
+             <div class="row">
+                <div class="col-12">
+                   <div class="kit-extra-info" id="kit-extra-1410" style="display:none;">
+                      <div class="extra-content">
+                         <div class="row">
+                            <div class="col-md-6">
+                               <h4>¿Qué incluye el Kit 1410?</h4>
+                               <ul>
+                                  <li>Componentes del kit 1410</li>
+                                  <li>Sensores avanzados</li>
+                                  <li>Guías y manuales</li>
+                                  <li>Software de programación</li>
+                               </ul>
+                               <p>El Kit 1410 está diseñado para llevar tus habilidades de robótica al siguiente nivel.</p>
+                            </div>
+                            <div class="col-md-6">
+                               <h4>Galería</h4>
+                               <div class="extra-images">
+                                  <img src="images/bot_1410.jpg" alt="Kit 1410 extra 1" class="extra-img mb-3" />
+                               </div>
+                               <h4>Video Demostrativo</h4>
+                               <div class="extra-video">
+                                  <iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" title="Kit 1410 Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                               </div>
+                            </div>
+                         </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
+           </div>
+         </div>
+         <!-- Kit 1410 section end -->
+         
       <div class="choose_section_2">
             <div class="container">
                <div class="row">
@@ -1081,6 +1145,29 @@ Armá 40 modelos, usá sensores y servos (360°/180°) y controlalos con el Gigo
          // Inicialmente oculto
          extra1409.style.display = 'none';
          btn1409.textContent = 'Ver más';
+      }
+   });
+</script>
+
+<script>
+// Mostrar info extra Kit 1410
+   document.addEventListener('DOMContentLoaded', function() {
+      var btn1410 = document.getElementById('vermas-1410');
+      var extra1410 = document.getElementById('kit-extra-1410');
+      if(btn1410 && extra1410) {
+         btn1410.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (extra1410.style.display === 'block') {
+               extra1410.style.display = 'none';
+               btn1410.textContent = 'Ver más';
+            } else {
+               extra1410.style.display = 'block';
+               btn1410.textContent = 'Ver menos';
+            }
+         });
+         // Inicialmente oculto
+         extra1410.style.display = 'none';
+         btn1410.textContent = 'Ver más';
       }
    });
 </script>

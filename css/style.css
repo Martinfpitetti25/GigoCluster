@@ -411,44 +411,159 @@ html, body {
     text-align: left;
     width: 100%;
 }
-/* Botones de kits en el banner */
+/* Botones de kits en el banner - Sistema profesional de grid */
 .kit-buttons {
-    margin-top: 30px;
+    margin-top: 40px;
+    max-width: 1000px;
 }
+
 .kit-buttons .row {
-    justify-content: flex-start !important;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 35px;
 }
+
 .kit-btn-col {
-    display: inline-block;
+    padding: 0;
     text-align: center;
-    margin: 0 30px;
+    flex: 0 0 auto;
 }
+
 .kit-btn {
-    border: 2px solid #ccc;
+    border: 3px solid #ddd;
     background: #fff;
-    border-radius: 16px;
-    padding: 18px;
-    transition: box-shadow 0.2s;
+    border-radius: 18px;
+    padding: 20px;
+    transition: all 0.3s ease;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
+    height: 160px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
+
 .kit-btn:hover {
-    box-shadow: 0 0 16px #ff9800;
+    box-shadow: 0 4px 20px rgba(255, 152, 0, 0.4);
+    transform: translateY(-3px);
+    border-color: #ff9800;
 }
+
 .kit-img {
-    width: 110px;
-    height: 110px;
+    width: 115px;
+    height: 115px;
     object-fit: contain;
     margin: 0 auto;
     display: block;
 }
+
 .kit-label {
-    margin-top: 14px;
-    font-size: 22px;
+    margin-top: 12px;
+    font-size: 18px;
     font-weight: 700;
     color: #fff;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.4);
+    border-radius: 10px;
+    padding: 10px 8px;
+    width: 160px;
+    line-height: 1.3;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botón pequeño de Expansiones */
+.expansion-btn {
+    margin-top: 15px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #ff9800, #f57c00);
+    color: #fff;
+    border: none;
     border-radius: 8px;
-    padding: 8px 0;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(245, 124, 0, 0.3);
+    width: 160px;
+}
+
+.expansion-btn:hover {
+    background: linear-gradient(135deg, #f57c00, #e65100);
+    box-shadow: 0 4px 12px rgba(245, 124, 0, 0.5);
+    transform: translateY(-2px);
+}
+
+/* Responsive para botones de kits */
+@media (max-width: 1200px) {
+    .kit-buttons {
+        max-width: 800px;
+    }
+    .kit-buttons .row {
+        gap: 25px;
+    }
+    .kit-btn {
+        width: 140px;
+        height: 140px;
+        padding: 16px;
+    }
+    .kit-img {
+        width: 100px;
+        height: 100px;
+    }
+    .kit-label {
+        width: 140px;
+        font-size: 16px;
+        min-height: 55px;
+    }
+}
+
+@media (max-width: 768px) {
+    .kit-buttons .row {
+        gap: 15px;
+        justify-content: center;
+    }
+    .kit-btn {
+        width: 110px;
+        height: 110px;
+        padding: 12px;
+    }
+    .kit-img {
+        width: 80px;
+        height: 80px;
+        height: 90px;
+    }
+    .kit-label {
+        width: 120px;
+        font-size: 0.85rem;
+        min-height: 45px;
+    }
+}
+@media (max-width: 480px) {
+    .kit-buttons .row {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center !important;
+    }
+    .kit-btn {
+        width: 100px;
+        height: 100px;
+        padding: 12px;
+    }
+    .kit-img {
+        width: 75px;
+        height: 75px;
+    }
+    .kit-label {
+        width: 100px;
+        font-size: 0.75rem;
+        min-height: 40px;
+    }
 }
 /* Logo del navbar con fondo naranja */
 .brand-orange {
@@ -1233,7 +1348,8 @@ button {
     float: left;
     background-image: url(../images/banner-bg.png);
     height: auto;
-    background-size: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     padding: 90px 0px;
 }
 
