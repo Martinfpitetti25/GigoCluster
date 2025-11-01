@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
    <head>
       <!-- basic -->
@@ -71,16 +71,40 @@
       <!-- end header section -->
       <!-- banner section start --> 
    <div class="banner_section layout_padding">
-            <div class="row">
-               <div class="col-12">
-                  <div class="banner_taital_main banner-left">
-                     <div class="mb-3">
-                        <span class="badge badge-warning" style="font-size: 1.1rem; padding: 10px 20px; font-weight: 700;">
-                           <i class="fa fa-trophy mr-2"></i>ISAE: Más de 30 años formando profesionales en tecnología
-                        </span>
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-12">
+               <div class="banner_taital_main banner-center">
+                     <!-- Hero Content -->
+                     <div class="banner-hero-content">
+                        <div class="banner-subtitle">Innovación en Robótica Educativa</div>
+                        <h1 class="banner_taital">
+                           <span class="banner-brand">GiGo</span>
+                           <span class="banner-slogan">Construye el Futuro</span>
+                        </h1>
+                        <p class="banner_text"><strong>Gigotoys</strong>, empresa taiwanesa líder en robótica educativa con reconocimiento mundial. Transformamos el aprendizaje en una experiencia divertida y enriquecedora, desarrollando habilidades STEAM a través del juego creativo.</p>
+                        <div class="banner-features">
+                           <div class="feature-item">
+                              <i class="fa fa-trophy"></i>
+                              <span>Premiados Internacionalmente</span>
+                           </div>
+                           <div class="feature-item">
+                              <i class="fa fa-graduation-cap"></i>
+                              <span>Educación Innovadora</span>
+                           </div>
+                           <div class="feature-item">
+                              <i class="fa fa-users"></i>
+                              <span>Millones de Estudiantes</span>
+                           </div>
+                        </div>
                      </div>
-                     <h1 class="banner_taital">GiGo</h1>
-                     <p class="banner_text">Gigotoys, Empresa taiwanesa especializada en robotica educativa y con multiples logros a nivel mundial.Con el objetivo constante de brindar alegría a través del aprendizaje, implantamos la intención educativa de forma imperceptible a través del juego. “Ayudar a los niños a disfrutar el aprendizaje”</p>
+                     
+                     <!-- Kit Selection Title -->
+                     <div class="kits-section-title">
+                        <h2>Explora Nuestros Kits Educativos</h2>
+                        <p>Selecciona un kit para conocer más detalles</p>
+                     </div>
+                     
                      <div class="kit-buttons">
                         <!-- Primera fila: 3 kits -->
                         <div class="row">
@@ -116,22 +140,19 @@
                            </div>
                            <div class="kit-btn-col">
                               <button class="kit-btn" onclick="document.getElementById('kit-1204rr').scrollIntoView({behavior: 'smooth'});">
-                                 <img src="images/bot_1204rr.jpg" alt="Kit 1204RR" class="kit-img" />
+                                 <img src="images/bot_1204rrbut.png" alt="Kit 1204RR" class="kit-img" />
                               </button>
-                              <div class="kit-label">Kit 1204RR</div>
+                              <div class="kit-label">TecnoBloques</div>
                            </div>
                            <div class="kit-btn-col">
                               <button class="kit-btn" onclick="document.getElementById('kit-1410').scrollIntoView({behavior: 'smooth'});">
-                                 <img src="images/bot_1410.jpg" alt="Kit 1410" class="kit-img" />
+                                 <img src="images/1410_M1.jpg" alt="Kit 1410" class="kit-img" />
                               </button>
-                              <div class="kit-label">Kit 1410</div>
+                              <div class="kit-label">Escuela de Energía</div>
                            </div>
                         </div>
                      </div>
                   </div>
-               </div>
-               </div>
-               <div class="col-md-6 padding_right0">
                </div>
             </div>
          </div>
@@ -408,7 +429,7 @@ Pensamiento de IA desde el inicio: ejercitá programación y depuración (debugg
                    <div class="models_img"><img src="images/bot_1204rr.jpg" alt="Kit 1204RR" /></div>
                 </div>
                 <div class="col-md-6">
-                   <h3 class="carolo_text" id="kit-1204rr"><span class="number_text">1204RR</span> Kit 1204RR</h3>
+                   <h3 class="carolo_text" id="kit-1204rr"><span class="number_text">1204RR</span> TecnoBloques</h3>
                    <div class="kit-tags mb-3">
                       <span class="kit-tag kit-tag-age"><i class="fa fa-child"></i> 12+ años</span>
                       <span class="kit-tag kit-tag-pc kit-tag-required"><i class="fa fa-laptop"></i> Requiere PC</span>
@@ -1145,6 +1166,29 @@ Armá 40 modelos, usá sensores y servos (360°/180°) y controlalos con el Gigo
          // Inicialmente oculto
          extra1409.style.display = 'none';
          btn1409.textContent = 'Ver más';
+      }
+   });
+</script>
+
+<script>
+// Mostrar info extra Kit 1204RR
+   document.addEventListener('DOMContentLoaded', function() {
+      var btn1204rr = document.getElementById('vermas-1204rr');
+      var extra1204rr = document.getElementById('kit-extra-1204rr');
+      if(btn1204rr && extra1204rr) {
+         btn1204rr.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (extra1204rr.style.display === 'block') {
+               extra1204rr.style.display = 'none';
+               btn1204rr.textContent = 'Ver más';
+            } else {
+               extra1204rr.style.display = 'block';
+               btn1204rr.textContent = 'Ver menos';
+            }
+         });
+         // Inicialmente oculto
+         extra1204rr.style.display = 'none';
+         btn1204rr.textContent = 'Ver más';
       }
    });
 </script>
