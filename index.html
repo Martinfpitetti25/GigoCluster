@@ -49,6 +49,920 @@
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
       <!-- font awesome css -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+      <!-- Custom Sidebar Dropdown Styles -->
+      <style>
+         /* ========================================
+            RESPONSIVE STYLES - MANTIENE DISEÑO ORIGINAL
+            ======================================== */
+         
+         /* Base Styles */
+         * {
+            box-sizing: border-box;
+         }
+         
+         body {
+            overflow-x: hidden;
+         }
+         
+         img {
+            max-width: 100%;
+            height: auto;
+         }
+         
+         /* Navbar mobile - solo funcionalidad responsive */
+         @media (max-width: 991px) {
+            .navbar-collapse {
+               margin-top: 10px;
+            }
+            
+            .navbar-nav .nav-item {
+               margin: 5px 0;
+            }
+         }
+         
+         @media (max-width: 576px) {
+            .navbar-nav .nav-link,
+            .navbar-nav .nav-btn {
+               font-size: 14px;
+               padding: 8px 15px !important;
+            }
+         }
+         
+         /* ========================================
+            SIDEBAR STYLES - RESPONSIVE
+            ======================================== */
+         
+         .sidebar-dropdown-wrapper {
+            position: relative;
+         }
+         
+         .sidebar-item-dropdown {
+            position: relative;
+         }
+         
+         .sidebar-arrow {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12px;
+            transition: transform 0.3s ease;
+         }
+         
+         .sidebar-dropdown-wrapper:hover .sidebar-arrow {
+            transform: translateY(-50%) rotate(90deg);
+         }
+         
+         .sidebar-submenu {
+            position: fixed;
+            left: 90px;
+            top: 50%;
+            transform: translateY(-50%) scale(0.9);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            border-radius: 12px;
+            padding: 15px 0;
+            min-width: 200px;
+            max-width: 250px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            z-index: 1001;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+         }
+         
+         .sidebar-dropdown-wrapper:hover .sidebar-submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(-50%) scale(1);
+         }
+         
+         .sidebar-submenu::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid #1e3c72;
+         }
+         
+         .sidebar-subitem {
+            display: block;
+            padding: 12px 20px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border-left: 4px solid transparent;
+            position: relative;
+            white-space: nowrap;
+         }
+         
+         .sidebar-subitem::before {
+            content: '▸';
+            position: absolute;
+            left: 8px;
+            opacity: 0;
+            transition: all 0.2s ease;
+            color: #ff6b35;
+         }
+         
+         .sidebar-subitem:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-left-color: #ff6b35;
+            color: #ff6b35;
+            text-decoration: none;
+            padding-left: 28px;
+            transform: translateX(3px);
+         }
+         
+         .sidebar-subitem:hover::before {
+            opacity: 1;
+            left: 12px;
+         }
+         
+         /* Desktop Sidebar */
+         @media (min-width: 769px) {
+            .floating-sidebar {
+               display: flex;
+               flex-direction: column;
+            }
+         }
+         
+         /* Mobile Sidebar - Bottom Bar */
+         @media (max-width: 768px) {
+            .floating-sidebar {
+               position: fixed !important;
+               bottom: 0;
+               left: 0;
+               right: 0;
+               top: auto !important;
+               width: 100%;
+               transform: none !important;
+               flex-direction: row !important;
+               justify-content: space-around;
+               background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+               padding: 12px 15px;
+               border-radius: 0;
+               gap: 8px;
+               box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+               z-index: 999;
+            }
+            
+            .floating-sidebar.visible {
+               opacity: 1 !important;
+               visibility: visible !important;
+            }
+            
+            .sidebar-item {
+               width: 50px !important;
+               height: 50px !important;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               background: rgba(255, 255, 255, 0.1);
+               border-radius: 12px;
+               transition: all 0.3s ease;
+            }
+            
+            .sidebar-item:hover,
+            .sidebar-item:active {
+               background: rgba(255, 107, 53, 0.3);
+               transform: translateY(-3px);
+            }
+            
+            .sidebar-item i {
+               font-size: 22px;
+            }
+            
+            .sidebar-tooltip {
+               display: none !important;
+            }
+            
+            .sidebar-dropdown-wrapper .sidebar-submenu {
+               display: none !important;
+            }
+            
+            .sidebar-arrow {
+               display: none !important;
+            }
+         }
+         
+         @media (max-width: 576px) {
+            .floating-sidebar {
+               padding: 10px 12px;
+            }
+            
+            .sidebar-item {
+               width: 45px !important;
+               height: 45px !important;
+            }
+            
+            .sidebar-item i {
+               font-size: 20px;
+            }
+         }
+         
+         @media (max-width: 375px) {
+            .sidebar-item {
+               width: 40px !important;
+               height: 40px !important;
+            }
+            
+            .sidebar-item i {
+               font-size: 18px;
+            }
+         }
+         
+         /* ========================================
+            COMPLETE MOBILE OPTIMIZATION
+            ======================================== */
+         
+         /* Global touch-friendly improvements */
+         @media (max-width: 768px) {
+            * {
+               -webkit-tap-highlight-color: rgba(255, 107, 53, 0.2);
+            }
+            
+            body {
+               font-size: 14px;
+            }
+            
+            .container {
+               padding-left: 20px;
+               padding-right: 20px;
+            }
+            
+            h1, h2, h3, h4, h5, h6 {
+               word-wrap: break-word;
+               overflow-wrap: break-word;
+            }
+            
+            img {
+               max-width: 100%;
+               height: auto;
+               display: block;
+            }
+            
+            /* Enhanced touch targets for all interactive elements */
+            a:not(.kit-btn):not(.contact-btn):not(.nav-link),
+            button,
+            .btn {
+               min-height: 44px;
+               display: inline-flex;
+               align-items: center;
+               padding: 10px 15px;
+            }
+         }
+         
+         /* Contact section mobile optimization */
+         @media (max-width: 768px) {
+            .contact_section {
+               padding: 40px 0 100px !important;
+            }
+            
+            .contact_taital {
+               font-size: 28px !important;
+               margin-bottom: 30px;
+            }
+            
+            .contact-btn,
+            .contact_bt,
+            .contact_section a {
+               width: 100% !important;
+               max-width: 350px;
+               margin: 10px auto !important;
+               display: flex !important;
+               align-items: center;
+               justify-content: center;
+               min-height: 52px;
+               font-size: 15px !important;
+               padding: 14px 20px !important;
+            }
+            
+            .contact_section .row {
+               flex-direction: column;
+               align-items: center;
+            }
+            
+            .contact_section .col-md-4 {
+               width: 100%;
+               margin-bottom: 15px;
+            }
+         }
+         
+         @media (max-width: 576px) {
+            .contact_section {
+               padding: 35px 0 95px !important;
+            }
+            
+            .contact_taital {
+               font-size: 24px !important;
+            }
+            
+            .contact-btn,
+            .contact_bt {
+               max-width: 100%;
+               font-size: 14px !important;
+               padding: 12px 18px !important;
+               min-height: 48px;
+            }
+         }
+         
+         /* Footer mobile adjustments */
+         @media (max-width: 768px) {
+            .footer_section {
+               padding: 30px 0 90px !important;
+            }
+            
+            .copyright_section {
+               padding: 20px 0 80px !important;
+            }
+         }
+         
+         /* Stats section mobile */
+         @media (max-width: 768px) {
+            .stats_section {
+               padding: 40px 0 !important;
+            }
+            
+            .stat-item {
+               margin-bottom: 25px;
+            }
+            
+            .stat-number {
+               font-size: 36px !important;
+            }
+            
+            .stat-label {
+               font-size: 16px !important;
+            }
+         }
+         
+         @media (max-width: 576px) {
+            .stats_section {
+               padding: 30px 0 !important;
+            }
+            
+            .stat-number {
+               font-size: 32px !important;
+            }
+            
+            .stat-label {
+               font-size: 14px !important;
+            }
+         }
+         
+         /* About section mobile improvements */
+         @media (max-width: 768px) {
+            .about_section {
+               padding: 40px 0 !important;
+            }
+            
+            .about_section .row {
+               flex-direction: column;
+            }
+            
+            .about_section .col-md-6 {
+               width: 100%;
+               margin-bottom: 25px;
+            }
+            
+            .about_section img {
+               margin-bottom: 20px;
+            }
+            
+            .about_taital {
+               font-size: 28px !important;
+               text-align: center;
+            }
+            
+            .about_text {
+               font-size: 14px !important;
+               text-align: center;
+            }
+         }
+         
+         .sidebar-item-dropdown {
+            position: relative;
+         }
+         
+         .sidebar-arrow {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12px;
+            transition: transform 0.3s ease;
+         }
+         
+         .sidebar-dropdown-wrapper:hover .sidebar-arrow {
+            transform: translateY(-50%) rotate(90deg);
+         }
+         
+         .sidebar-submenu {
+            position: fixed;
+            left: 90px;
+            top: 50%;
+            transform: translateY(-50%) scale(0.9);
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            border-radius: 12px;
+            padding: 15px 0;
+            min-width: 200px;
+            max-width: 250px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            z-index: 1001;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+         }
+         
+         .sidebar-dropdown-wrapper:hover .sidebar-submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(-50%) scale(1);
+         }
+         
+         .sidebar-submenu::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            border-right: 10px solid #1e3c72;
+         }
+         
+         .sidebar-subitem {
+            display: block;
+            padding: 12px 20px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border-left: 4px solid transparent;
+            position: relative;
+            white-space: nowrap;
+         }
+         
+         .sidebar-subitem::before {
+            content: '▸';
+            position: absolute;
+            left: 8px;
+            opacity: 0;
+            transition: all 0.2s ease;
+            color: #ff6b35;
+         }
+         
+         .sidebar-subitem:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-left-color: #ff6b35;
+            color: #ff6b35;
+            text-decoration: none;
+            padding-left: 28px;
+            transform: translateX(3px);
+         }
+         
+         .sidebar-subitem:hover::before {
+            opacity: 1;
+            left: 12px;
+         }
+         
+         /* Responsive adjustments */
+         @media (max-width: 1200px) {
+            .sidebar-submenu {
+               left: 80px;
+               min-width: 180px;
+            }
+         }
+         
+         @media (max-width: 768px) {
+            .sidebar-submenu {
+               left: 70px;
+               top: 20%;
+               transform: translateY(0) scale(0.9);
+               min-width: 160px;
+               font-size: 13px;
+            }
+            
+            .sidebar-dropdown-wrapper:hover .sidebar-submenu {
+               transform: translateY(0) scale(1);
+            }
+            
+            .sidebar-subitem {
+               padding: 10px 16px;
+               font-size: 13px;
+            }
+         }
+         
+         @media (max-width: 480px) {
+            .sidebar-submenu {
+               display: none;
+            }
+         }
+         
+         /* Additional Mobile Responsive Styles for Index Page */
+         
+         /* Navbar responsive */
+         @media (max-width: 991px) {
+            .header_section {
+               padding: 10px 0;
+            }
+            
+            .navbar {
+               padding: 8px 0;
+            }
+            
+            .navbar-brand {
+               font-size: 1.3rem !important;
+            }
+            
+            .navbar-toggler {
+               border: 2px solid rgba(255, 255, 255, 0.5);
+               padding: 8px 10px;
+            }
+            
+            .navbar-toggler:focus {
+               outline: none;
+               box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+            }
+            
+            .navbar-collapse {
+               background: rgba(30, 60, 114, 0.98);
+               margin-top: 15px;
+               padding: 15px;
+               border-radius: 8px;
+            }
+            
+            .navbar-nav {
+               width: 100%;
+            }
+            
+            .navbar-nav .nav-item {
+               margin: 8px 0 !important;
+               width: 100%;
+            }
+            
+            .navbar-nav .nav-link,
+            .navbar-nav .nav-btn {
+               text-align: center;
+               display: block;
+               width: 100%;
+               padding: 12px 20px !important;
+               border-radius: 25px !important;
+            }
+            
+            .navbar-nav .nav-item.active .nav-link {
+               background: rgba(255, 107, 53, 0.2);
+            }
+            
+            .navbar-nav .nav-link:hover {
+               background: rgba(255, 255, 255, 0.15);
+            }
+         }
+         
+         @media (max-width: 576px) {
+            .navbar-brand {
+               font-size: 1.1rem !important;
+            }
+            
+            .navbar-nav .nav-link,
+            .navbar-nav .nav-btn {
+               font-size: 14px;
+               padding: 10px 15px !important;
+            }
+            
+            .navbar-nav .nav-link i,
+            .navbar-nav .nav-btn i {
+               margin-right: 8px;
+            }
+         }
+         
+         /* Banner section responsive */
+         @media (max-width: 768px) {
+            .banner_section {
+               padding: 60px 0 40px;
+            }
+            
+            .banner_taital_main h1 {
+               font-size: 32px !important;
+               line-height: 1.3;
+            }
+            
+            .banner_taital_main p {
+               font-size: 16px;
+            }
+            
+            .kit-grid {
+               grid-template-columns: 1fr !important;
+               gap: 15px;
+            }
+            
+            .kit-btn {
+               padding: 12px;
+            }
+            
+            .kit-buttons .row {
+               flex-direction: column;
+            }
+            
+            .kit-btn-col {
+               width: 100% !important;
+               max-width: 350px;
+               margin: 0 auto 20px;
+            }
+            
+            .banner-features {
+               flex-direction: column;
+               gap: 10px;
+            }
+            
+            .feature-item {
+               width: 100%;
+               justify-content: center;
+            }
+         }
+         
+         @media (max-width: 576px) {
+            .banner_taital_main h1 {
+               font-size: 26px !important;
+            }
+            
+            .banner_taital_main p {
+               font-size: 14px;
+            }
+            
+            .banner-brand,
+            .banner-slogan {
+               display: block;
+            }
+            
+            .kits-section-title h2 {
+               font-size: 22px;
+            }
+            
+            .kits-section-title p {
+               font-size: 14px;
+            }
+            
+            .kit-label {
+               font-size: 13px;
+            }
+            
+            .expansion-btn {
+               font-size: 12px;
+               padding: 6px 12px;
+            }
+         }
+         
+         /* About section responsive */
+         @media (max-width: 768px) {
+            .about_section .row {
+               flex-direction: column;
+            }
+            
+            .about_section img {
+               max-width: 100%;
+               height: auto;
+            }
+         }
+         
+         /* Kits section responsive */
+         @media (max-width: 991px) {
+            .models_section_2 .row {
+               flex-direction: column-reverse;
+            }
+            
+            .models_section_2 .col-md-6 {
+               width: 100%;
+               max-width: 100%;
+            }
+            
+            .models_img {
+               margin-bottom: 20px;
+            }
+            
+            .carolo_text {
+               font-size: 24px !important;
+            }
+            
+            .ullamco_text {
+               font-size: 15px;
+            }
+         }
+         
+         @media (max-width: 576px) {
+            .carolo_text {
+               font-size: 20px !important;
+            }
+            
+            .number_text {
+               font-size: 18px;
+            }
+            
+            .kit-tags {
+               flex-wrap: wrap;
+               gap: 6px;
+            }
+            
+            .kit-tag {
+               font-size: 11px;
+               padding: 4px 8px;
+            }
+         }
+         
+         /* Kit extra info responsive */
+         @media (max-width: 768px) {
+            .kit-extra-info .row {
+               flex-direction: column;
+            }
+            
+            .extra-images img,
+            .extra-video iframe {
+               width: 100%;
+               height: auto;
+            }
+            
+            .expansion-kit {
+               margin-bottom: 30px;
+            }
+            
+            .expansion-kit h4 {
+               font-size: 20px;
+            }
+            
+            .expansion-kit p,
+            .expansion-kit ul li {
+               font-size: 14px;
+            }
+            
+            .expansion-comparison {
+               overflow-x: auto;
+            }
+            
+            table {
+               font-size: 13px;
+            }
+         }
+         
+         @media (max-width: 576px) {
+            .expansion-kit h4 {
+               font-size: 18px;
+            }
+            
+            table {
+               font-size: 11px;
+            }
+            
+            table th,
+            table td {
+               padding: 6px 4px;
+            }
+         }
+         
+         /* Stats section responsive */
+         @media (max-width: 768px) {
+            .choose_section_2 .row {
+               justify-content: center;
+            }
+            
+            .rated_text {
+               font-size: 48px !important;
+            }
+            
+            .house_text {
+               font-size: 16px;
+            }
+         }
+         
+         /* Contact section responsive */
+         @media (max-width: 768px) {
+            .contact_section {
+               padding: 40px 0;
+            }
+            
+            .contact_taital {
+               font-size: 32px;
+            }
+            
+            .location_text li {
+               font-size: 16px;
+            }
+         }
+         
+         @media (max-width: 576px) {
+            .contact_taital {
+               font-size: 26px;
+            }
+            
+            .location_text li {
+               font-size: 14px;
+               padding: 10px 0;
+            }
+         }
+         
+         /* Floating sidebar mobile */
+         @media (max-width: 991px) {
+            .floating-sidebar {
+               left: 10px;
+               gap: 10px;
+            }
+            
+            .sidebar-item {
+               width: 45px;
+               height: 45px;
+            }
+            
+            .sidebar-tooltip {
+               font-size: 11px;
+            }
+         }
+         
+         /* Tablets landscape */
+         @media (min-width: 768px) and (max-width: 1024px) {
+            .kit-btn-col {
+               width: 50%;
+            }
+            
+            .models_section_2 .col-md-6 {
+               width: 100%;
+            }
+            
+            .banner_taital_main h1 {
+               font-size: 36px !important;
+            }
+         }
+         
+         @media (max-width: 768px) {
+            .floating-sidebar {
+               top: auto;
+               bottom: 20px;
+               transform: none;
+               flex-direction: row;
+               left: 50%;
+               transform: translateX(-50%);
+               background: rgba(30, 60, 114, 0.95);
+               padding: 10px 15px;
+               border-radius: 25px;
+               gap: 8px;
+            }
+            
+            .sidebar-item {
+               width: 40px;
+               height: 40px;
+            }
+            
+            .sidebar-tooltip {
+               display: none;
+            }
+            
+            .sidebar-dropdown-wrapper .sidebar-submenu {
+               display: none !important;
+            }
+         }
+         
+         /* Button scroll to top responsive */
+         @media (max-width: 768px) {
+            #btn-scroll-top {
+               width: 45px;
+               height: 45px;
+               bottom: 80px;
+               right: 15px;
+            }
+         }
+         
+         /* Ensure images don't overflow */
+         img {
+            max-width: 100%;
+            height: auto;
+         }
+         
+         /* Prevent horizontal scroll */
+         body {
+            overflow-x: hidden;
+         }
+         
+         .container-fluid {
+            overflow-x: hidden;
+         }
+         
+         /* Fix text overflow */
+         * {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+         }
+      </style>
    </head>
    <body>
       <!-- header section strats -->
@@ -58,29 +972,26 @@
                 <a class="navbar-brand brand-orange" href="">CLÚSTER</a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class=""> </span>
+                    <span class="navbar-toggler-icon">
+                       <i class="fa fa-bars" style="color: #fff; font-size: 24px;"></i>
+                    </span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                <ul class="navbar-nav ml-auto text-uppercase d-flex align-items-center">
-                  <li class="nav-item">
-                     <a class="nav-link font-weight-bold px-3 py-2 rounded-pill border border-light" href="#gigo-toys"> 
-                        <i class="fa fa-cog mr-1"></i>GIGO 
+                  <li class="nav-item active">
+                     <a class="nav-link font-weight-bold px-3 py-2 rounded-pill border border-light" href="index.html"> 
+                        <i class="fa fa-home mr-1"></i>INICIO <span class="sr-only">(current)</span>
                      </a>
                   </li>
                   <li class="nav-item ml-2">
-                     <a class="nav-link font-weight-bold px-3 py-2 rounded-pill border border-light" href="#faq">
-                        <i class="fa fa-question-circle mr-1"></i>FAQ
-                     </a>
-                  </li>
-                  <li class="nav-item ml-2">
-                     <a class="nav-link font-weight-bold px-3 py-2 rounded-pill border border-light" href="#contacto">
-                        <i class="fa fa-envelope mr-1"></i>CONTACTO
-                     </a>
-                  </li>
-                  <li class="nav-item ml-2">
-                     <a class="btn btn-outline-light nav-btn px-3 py-2 rounded-pill" href="#conocenos">
+                     <a class="nav-link font-weight-bold px-3 py-2 rounded-pill border border-light" href="nosotros.html">
                         <i class="fa fa-users mr-1"></i>NOSOTROS
+                     </a>
+                  </li>
+                  <li class="nav-item ml-2">
+                     <a class="btn btn-outline-light nav-btn px-3 py-2 rounded-pill" href="faq.html">
+                        <i class="fa fa-question-circle mr-1"></i>FAQ
                      </a>
                   </li>
                     </ul>
@@ -92,27 +1003,38 @@
       
       <!-- Floating Sidebar Navigation -->
       <div class="floating-sidebar" id="floatingSidebar">
-         <a href="#gigo-toys" class="sidebar-item" data-tooltip="GIGO">
-            <i class="fa fa-cog"></i>
-            <span class="sidebar-tooltip">GIGO</span>
+         <a href="#inicio" class="sidebar-item" data-tooltip="Inicio">
+            <i class="fa fa-home"></i>
+            <span class="sidebar-tooltip">Inicio</span>
          </a>
-         <a href="#faq" class="sidebar-item" data-tooltip="FAQ">
-            <i class="fa fa-question-circle"></i>
-            <span class="sidebar-tooltip">FAQ</span>
+         <a href="#about" class="sidebar-item" data-tooltip="Presentación">
+            <i class="fa fa-info-circle"></i>
+            <span class="sidebar-tooltip">Presentación</span>
          </a>
-         <a href="#contacto" class="sidebar-item" data-tooltip="CONTACTO">
+         <div class="sidebar-item-wrapper sidebar-dropdown-wrapper">
+            <a href="#kits" class="sidebar-item sidebar-item-dropdown" data-tooltip="Kits">
+               <i class="fa fa-cubes"></i>
+               <span class="sidebar-tooltip">Kits</span>
+               <i class="fa fa-angle-right sidebar-arrow"></i>
+            </a>
+            <div class="sidebar-submenu">
+               <a href="#kit-1205" class="sidebar-subitem">Robótica Creativa</a>
+               <a href="#kit-1269" class="sidebar-subitem">RoboLab 2.0</a>
+               <a href="#kit-1300" class="sidebar-subitem">Fábrica del Futuro</a>
+               <a href="#kit-1409" class="sidebar-subitem">Academia Robots</a>
+               <a href="#kit-1204rr" class="sidebar-subitem">TecnoBloques</a>
+               <a href="#kit-1410" class="sidebar-subitem">Escuela de Energía</a>
+            </div>
+         </div>
+         <a href="#contacto" class="sidebar-item" data-tooltip="Contacto">
             <i class="fa fa-envelope"></i>
-            <span class="sidebar-tooltip">CONTACTO</span>
-         </a>
-         <a href="#conocenos" class="sidebar-item" data-tooltip="NOSOTROS">
-            <i class="fa fa-users"></i>
-            <span class="sidebar-tooltip">NOSOTROS</span>
+            <span class="sidebar-tooltip">Contacto</span>
          </a>
       </div>
       <!-- end floating sidebar -->
       
       <!-- banner section start --> 
-   <div class="banner_section layout_padding">
+   <div class="banner_section layout_padding" id="inicio">
       <div class="container-fluid">
          <div class="row">
             <div class="col-12">
@@ -201,7 +1123,7 @@
       </div>
       <!-- banner section end -->
       <!-- about section start -->
-      <div class="about_section layout_padding">
+      <div class="about_section layout_padding" id="about">
          <div class="container-fluid">
             <!-- Section Title -->
             <div class="row">
@@ -300,7 +1222,7 @@
       </div>
       <!-- about section end -->
       <!-- models section start -->
-      <div class="models_section layout_padding">
+      <div class="models_section layout_padding" id="kits">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
@@ -886,493 +1808,6 @@ Bloques modulares de Bio-ABS (certificados en la Unión Europea) para un aprendi
                </div>
             </div>
          </div>
-      <!-- blog section start -->
-      <div class="blog_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <h1 class="blog_taital" id="conocenos">Conocenos</h1>
-               </div>
-            </div>
-            <div class="blog_section_2">
-               <div class="row mb-5">
-                  <div class="col-12">
-                     <div class="info-card-horizontal isae-card">
-                        <div class="row align-items-center">
-                           <div class="col-md-5">
-                              <div class="isae-image-column">
-                                 <div class="isae-img-item">
-                                    <div class="isae-img-wrapper">
-                                       <img src="images/Portfolio08.png" alt="Campus ISAE">
-                                    </div>
-                                    <p class="isae-img-caption">robótica educativa y didáctica</p>
-                                 </div>
-                                 <div class="isae-img-item">
-                                    <div class="isae-img-wrapper">
-                                       <img src="images/Portfolio05.png" alt="Estudiantes ISAE">
-                                    </div>
-                                    <p class="isae-img-caption">Electrónica aplicada al conocimiento</p>
-                                 </div>
-                                 <div class="isae-img-item">
-                                    <div class="isae-img-wrapper">
-                                       <img src="images/Portfolio03.png" alt="Instalaciones ISAE">
-                                    </div>
-                                    <p class="isae-img-caption">Laboratorios y espacios de innovación tecnológica</p>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-md-7">
-                              <div class="info-card-body-horizontal">
-                                 <div class="mb-3">
-                                    <span class="badge badge-success" style="font-size: 1.2rem; padding: 12px 25px; font-weight: 700;">
-                                       <i class="fa fa-calendar mr-2"></i>MÁS DE 30 AÑOS DE TRAYECTORIA
-                                    </span>
-                                 </div>
-                                 <h3 class="info-card-title-horizontal">Instituto Superior Albert Einstein</h3>
-                                 <h5 class="info-card-subtitle-horizontal">"La alegría de ver y entender es el más perfecto don de la naturaleza". -A. Einstein</h5>
-
-                                 <p class="info-card-text-horizontal"><strong>Desde hace más de tres décadas</strong>, en ISAE formamos en robótica y programación con talleres, cursos y proyectos STEAM. Defendemos la libertad, la convivencia democrática, la ética, la justicia y la equidad, con foco en el cuidado del ambiente y las energías limpias.</p>
-
-                                 <div class="isae-highlights">
-                                    <div class="highlight-item">
-                                       <i class="fa fa-graduation-cap highlight-icon"></i>
-                                       <div class="highlight-content">
-                                          <h6>Desarrollo Académico</h6>
-                                          <p>Programas de formación superior con enfoque en investigación científica y tecnológica con fines pacíficos.</p>
-                                       </div>
-                                    </div>
-                                    <div class="highlight-item">
-                                       <i class="fa fa-lightbulb-o highlight-icon"></i>
-                                       <div class="highlight-content">
-                                          <h6>Innovación Continua</h6>
-                                          <p>Compromiso constante con la mejora de la calidad de vida de la población a través de la educación y la tecnología.</p>
-                                       </div>
-                                    </div>
-                                    <div class="highlight-item">
-                                       <i class="fa fa-users highlight-icon"></i>
-                                       <div class="highlight-content">
-                                          <h6>Comunidad Educativa</h6>
-                                          <p>Un espacio de crecimiento integral donde estudiantes, docentes y comunidad trabajan juntos por un futuro mejor.</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="row mb-5">
-                  <div class="col-12">
-                     <div class="info-card-horizontal cluster-card">
-                        <div class="row align-items-center">
-                           <div class="col-md-7 order-md-1 order-2">
-                              <div class="info-card-body-horizontal">
-                                 <h3 class="info-card-title-horizontal">CLÚSTER TECNOLÓGICO</h3>
-                                 <h5 class="info-card-subtitle-horizontal">Tecnología, desarrollo e innovación</h5>
-
-                                 <p class="info-card-text-horizontal">El Clúster nace como una extensión natural de ISAE para escalar lo que ya sabemos hacer: transformar curiosidad en competencias. Ampliamos el negocio educativo sumando laboratorios, kits, mentores y redes con la industria, para que más personas dentro y fuera del ISAE puedan aprender, especializarse y certificarse en menos tiempo.</p>
-
-                                 <div class="cluster-features">
-                                    <div class="feature-item">
-                                       <div class="feature-icon-box">
-                                          <i class="fa fa-code"></i>
-                                       </div>
-                                       <div class="feature-content">
-                                          <h6>Desarrollo Tecnológico</h6>
-                                          <p>Programación, robótica y tecnologías emergentes aplicadas a la educación y la industria.</p>
-                                       </div>
-                                    </div>
-                                    <div class="feature-item">
-                                       <div class="feature-icon-box">
-                                          <i class="fa fa-flask"></i>
-                                       </div>
-                                       <div class="feature-content">
-                                          <h6>Investigación Aplicada</h6>
-                                          <p>Proyectos de investigación con impacto real en la comunidad y el sector productivo.</p>
-                                       </div>
-                                    </div>
-                                    <div class="feature-item">
-                                       <div class="feature-icon-box">
-                                          <i class="fa fa-rocket"></i>
-                                       </div>
-                                       <div class="feature-content">
-                                          <h6>Innovación Continua</h6>
-                                          <p>Espacio maker para crear, experimentar y desarrollar soluciones innovadoras.</p>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-md-5 order-md-2 order-1">
-                              <div class="cluster-image-column">
-                                 <div class="cluster-img-item">
-                                    <div class="cluster-img-wrapper">
-                                       <img src="images/CLuster1.JPG" alt="Cluster Tecnológico">
-                                    </div>
-                                    <p class="cluster-img-caption">Espacios de desarrollo tecnológico y maker</p>
-                                 </div>
-                                 <div class="cluster-img-item">
-                                    <div class="cluster-img-wrapper">
-                                       <img src="images/Cluster2.JPG" alt="Innovación">
-                                    </div>
-                                    <p class="cluster-img-caption">Tecnologia de ultima generación</p>
-                                 </div>
-                                 <div class="cluster-img-item">
-                                    <div class="cluster-img-wrapper">
-                                       <img src="images/Cluster3.JPG" alt="Investigación">
-                                    </div>
-                                    <p class="cluster-img-caption">Robotica educativa y pedagogica</p>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-
-               <!-- Sección Capacitaciones tecno-aliados -->
-               <div class="row mb-5">
-                  <div class="col-12">
-                     <div class="info-card-horizontal capacitaciones-card">
-                        <div class="row">
-                           <div class="col-12">
-                              <div class="info-card-body-horizontal">
-                                 <h3 class="info-card-title-horizontal">CAPACITACIONES TECNO-ALIADOS</h3>
-                                 <h5 class="info-card-subtitle-horizontal">Formación técnica y profesional</h5>
-                                 <p class="info-card-text-horizontal">Cursos y talleres especializados dictados por expertos aliados del clúster, diseñados para potenciar habilidades tecnológicas y profesionales en nuestra comunidad educativa.</p>
-                                 
-                                 <!-- Grilla de cursos -->
-                                 <div class="courses-grid mt-4">
-                                    <!-- Primera fila: 4 cursos -->
-                                    <div class="row mb-3">
-                                       <div class="col-lg-6 mb-3">
-                                          <div class="course-card" data-course="curso1">
-                                             <div class="course-icon-wrapper">
-                                                <i class="fa fa-line-chart course-icon"></i>
-                                             </div>
-                                             <div class="course-content">
-                                                <h6 class="course-title">De Ahorrista a Inversor</h6>
-                                                <p class="course-description">Aprende a gestionar tus finanzas personales y descubre el mundo de las inversiones inteligentes.</p>
-                                                <span class="course-badge">Nivel Inicial</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-lg-6 mb-3">
-                                          <div class="course-card" data-course="curso2">
-                                             <div class="course-icon-wrapper">
-                                                <i class="fa fa-android course-icon"></i>
-                                             </div>
-                                             <div class="course-content">
-                                                <h6 class="course-title">Robótica Inicial</h6>
-                                                <p class="course-description">Primeros pasos en robótica educativa. Aprende a construir y programar tus propios robots.</p>
-                                                <span class="course-badge">Nivel Básico</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    
-                                    <div class="row mb-3">
-                                       <div class="col-lg-6 mb-3">
-                                          <div class="course-card" data-course="curso3">
-                                             <div class="course-icon-wrapper">
-                                                <i class="fa fa-cube course-icon"></i>
-                                             </div>
-                                             <div class="course-content">
-                                                <h6 class="course-title">Diseño e Impresión 3D</h6>
-                                                <p class="course-description">Modela objetos 3D y materializa tus ideas usando tecnología de impresión tridimensional.</p>
-                                                <span class="course-badge">Intermedio</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-lg-6 mb-3">
-                                          <div class="course-card" data-course="curso4">
-                                             <div class="course-icon-wrapper">
-                                                <i class="fa fa-user-circle course-icon"></i>
-                                             </div>
-                                             <div class="course-content">
-                                                <h6 class="course-title">Docencia y Entornos Digitales</h6>
-                                                <p class="course-description">Herramientas y estrategias para llevar la educación al mundo digital de forma efectiva.</p>
-                                                <span class="course-badge">Docentes</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    
-                                    <!-- Segunda sección de cursos -->
-                                    <div class="row mb-3">
-                                       <div class="col-lg-6 mb-3">
-                                          <div class="course-card" data-course="curso5">
-                                             <div class="course-icon-wrapper">
-                                                <i class="fa fa-code course-icon"></i>
-                                             </div>
-                                             <div class="course-content">
-                                                <h6 class="course-title">Programador Python Básico</h6>
-                                                <p class="course-description">Domina los fundamentos de Python, uno de los lenguajes más demandados en el mercado.</p>
-                                                <span class="course-badge">Programación</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-lg-6 mb-3">
-                                          <div class="course-card" data-course="curso6">
-                                             <div class="course-icon-wrapper">
-                                                <i class="fa fa-video-camera course-icon"></i>
-                                             </div>
-                                             <div class="course-content">
-                                                <h6 class="course-title">Productor de Contenidos Digitales</h6>
-                                                <p class="course-description">Crea contenido audiovisual profesional para redes sociales y plataformas digitales.</p>
-                                                <span class="course-badge">Creativo</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    
-                                    <div class="row">
-                                       <div class="col-lg-6 mb-3">
-                                          <div class="course-card" data-course="curso7">
-                                             <div class="course-icon-wrapper">
-                                                <i class="fa fa-laptop course-icon"></i>
-                                             </div>
-                                             <div class="course-content">
-                                                <h6 class="course-title">Desarrollo Web Junior</h6>
-                                                <p class="course-description">Aprende HTML, CSS y JavaScript para crear tus propias páginas web desde cero.</p>
-                                                <span class="course-badge">Web Dev</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-lg-6 mb-3">
-                                          <div class="course-card" data-course="curso8">
-                                             <div class="course-icon-wrapper">
-                                                <i class="fa fa-home course-icon"></i>
-                                             </div>
-                                             <div class="course-content">
-                                                <h6 class="course-title">Domótica Inicial</h6>
-                                                <p class="course-description">Automatiza tu hogar con tecnología IoT. Controla luces, temperatura y seguridad inteligente.</p>
-                                                <span class="course-badge">IoT</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               
-               <!-- Sección Equipo de Gestión del Clúster -->
-               <div class="row mb-5">
-                  <div class="col-12">
-                     <div class="team-section">
-                        <div class="team-header text-center mb-5">
-                           <h3 class="team-title">Equipo de Gestión</h3>
-                           <p class="team-subtitle">Profesionales comprometidos con la innovación y el desarrollo tecnológico</p>
-                        </div>
-                        
-                        <!-- Director Principal -->
-                        <div class="row justify-content-center mb-5">
-                           <div class="col-lg-5 col-md-8">
-                              <div class="team-card director-card">
-                                 <div class="team-img-wrapper director-img">
-                                    <img src="images/team-img1.png" alt="Director General">
-                                 </div>
-                                 <div class="team-info director-info">
-                                    <h4 class="team-name director-name">ing. José Nicolás Nieto</h4>
-                                    <p class="team-role director-role">Director General del Clúster Tecnológico e ISAE</p>
-                                    <p class="team-description">Líder con amplia trayectoria en gestión de proyectos educativos y tecnológicos. Responsable de la visión estratégica y el desarrollo integral del Clúster Tecnológico, promoviendo la innovación y la excelencia académica.</p>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        
-                        <div class="row justify-content-center">
-                           <div class="col-lg-2 col-md-6 mb-4">
-                              <div class="team-card">
-                                 <div class="team-img-wrapper">
-                                    <img src="images/team-img1.png" alt="Director">
-                                 </div>
-                                 <div class="team-info">
-                                    <h5 class="team-name">ing. Javier Nicolás Nieto</h5>
-                                    <p class="team-role">Coordinador Jefe de equipo</p>
-                                    <p class="team-description">Soy ingeniero electrónico, con capacidades de liderazgo y comunicación. con gustos además por el desarrollo web y el diseño e impresión 3D</p>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-2 col-md-6 mb-4">
-                              <div class="team-card">
-                                 <div class="team-img-wrapper">
-                                    <img src="images/agustin_carta.jpeg" alt="Coordinador">
-                                 </div>
-                                 <div class="team-info">
-                                    <h5 class="team-name">Agustín Herrera</h5>
-                                    <p class="team-role">Coordinador Técnico</p>
-                                    <p class="team-description">Soy estudiante de ingeniería mecatrónica con experiencia en desarrollo de tecnología robótica, inteligencia artificial en machine learning, automatización industrial y domótica.</p>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-2 col-md-6 mb-4">
-                              <div class="team-card">
-                                 <div class="team-img-wrapper">
-                                    <img src="images/fran_carta.jpeg" alt="Responsable">
-                                 </div>
-                                 <div class="team-info">
-                                    <h5 class="team-name">Martín Francisco Pitetti</h5>
-                                    <p class="team-role">Coordinador técnico</p>
-                                    <p class="team-description">Soy estudiante de Ingeniería en Sistemas, apasionado por el desarrollo de software, las inteligencias artificiales, el aprendizaje automático y el desarrollo web.</p>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-2 col-md-6 mb-4">
-                              <div class="team-card">
-                                 <div class="team-img-wrapper">
-                                    <img src="images/team-img1.png" alt="Asesor">
-                                 </div>
-                                 <div class="team-info">
-                                    <h5 class="team-name">Lic. Ramiro Herrera</h5>
-                                    <p class="team-role">CM, Diseñador gráfico</p>
-                                    <p class="team-description">Vinculación con el sector productivo y desarrollo de alianzas estratégicas.</p>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-lg-2 col-md-6 mb-4">
-                              <div class="team-card">
-                                 <div class="team-img-wrapper">
-                                    <img src="images/team-img2.png" alt="Micaela Nieto">
-                                 </div>
-                                 <div class="team-info">
-                                    <h5 class="team-name">Micaela Nieto</h5>
-                                    <p class="team-role">Coordinadora</p>
-                                    <p class="team-description">Especialista en coordinación y gestión de proyectos educativos.</p>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               
-               <div class="row mb-5" id="faq">
-                  <div class="col-12">
-                     <div class="faq-section-new">
-                        <div class="faq-header text-center mb-5">
-                           <h2 class="faq-main-title">Preguntas Frecuentes</h2>
-                           <p class="faq-subtitle">Encuentra respuestas a las consultas más comunes sobre nuestros kits y servicios</p>
-                        </div>
-                        
-                        <div class="row">
-                           <div class="col-lg-6 mb-4">
-                              <div class="faq-card">
-                                 <div class="faq-question-new">
-                                    <i class="fa fa-question-circle faq-icon-new"></i>
-                                    <h5>¿Qué edades están recomendadas para cada kit?</h5>
-                                    <i class="fa fa-chevron-down faq-arrow-new"></i>
-                                 </div>
-                                 <div class="faq-answer-new">
-                                    <p>Cada kit está diseñado para diferentes rangos de edad: Kit 1205 (6-10 años), Kit 1269 (10-14 años), Kit 1300 (12-16 años), Kit 1409 (14+ años), y Kit 1204RR (12+ años). Todos están pensados para facilitar el aprendizaje progresivo.</p>
-                                 </div>
-                              </div>
-                           </div>
-                           
-                           <div class="col-lg-6 mb-4">
-                              <div class="faq-card">
-                                 <div class="faq-question-new">
-                                    <i class="fa fa-graduation-cap faq-icon-new"></i>
-                                    <h5>¿Necesito conocimientos previos de programación?</h5>
-                                    <i class="fa fa-chevron-down faq-arrow-new"></i>
-                                 </div>
-                                 <div class="faq-answer-new">
-                                    <p>No es necesario. Gigo se encargó de que los kits estén diseñados para iniciar desde cero. Incluyen guías paso a paso, programación visual por bloques y materiales educativos que facilitan el aprendizaje de forma intuitiva.</p>
-                                 </div>
-                              </div>
-                           </div>
-                           
-                           <div class="col-lg-6 mb-4">
-                              <div class="faq-card">
-                                 <div class="faq-question-new">
-                                    <i class="fa fa-truck faq-icon-new"></i>
-                                    <h5>¿Realizan envíos a todo el país?</h5>
-                                    <i class="fa fa-chevron-down faq-arrow-new"></i>
-                                 </div>
-                                 <div class="faq-answer-new">
-                                    <p>Sí, realizamos envíos a todo el territorio nacional. Los tiempos de entrega varían según la ubicación. Contáctanos para obtener información específica sobre costos y plazos de entrega para tu zona.</p>
-                                 </div>
-                              </div>
-                           </div>
-                           
-                           <div class="col-lg-6 mb-4">
-                              <div class="faq-card">
-                                 <div class="faq-question-new">
-                                    <i class="fa fa-shield faq-icon-new"></i>
-                                    <h5>¿Qué garantía tienen los productos?</h5>
-                                    <i class="fa fa-chevron-down faq-arrow-new"></i>
-                                 </div>
-                                 <div class="faq-answer-new">
-                                    <p>Todos nuestros kits cuentan con garantía de 6 meses contra defectos de fabricación. Además, ofrecemos soporte técnico continuo y asesoramiento para sacar el máximo provecho de tu kit educativo.</p>
-                                 </div>
-                              </div>
-                           </div>
-                           
-                           <div class="col-lg-6 mb-4">
-                              <div class="faq-card">
-                                 <div class="faq-question-new">
-                                    <i class="fa fa-book faq-icon-new"></i>
-                                    <h5>¿Incluyen material didáctico y guías?</h5>
-                                    <i class="fa fa-chevron-down faq-arrow-new"></i>
-                                 </div>
-                                 <div class="faq-answer-new">
-                                    <p>Absolutamente. Cada kit incluye guías de actividades, desafíos progresivos y acceso a secuencias pedagógicas. También ofrecemos soporte pedagógico.</p>
-                                 </div>
-                              </div>
-                           </div>
-                           
-                           <div class="col-lg-6 mb-4">
-                              <div class="faq-card">
-                                 <div class="faq-question-new">
-                                    <i class="fa fa-users faq-icon-new"></i>
-                                    <h5>¿Ofrecen capacitación para docentes?</h5>
-                                    <i class="fa fa-chevron-down faq-arrow-new"></i>
-                                 </div>
-                                 <div class="faq-answer-new">
-                                    <p>Sí, ofrecemos programas de capacitación y talleres especializados para docentes. Incluyen formación en uso de kits, metodologías pedagógicas y estrategias para integrar la robótica en el aula.</p>
-                                 </div>
-                              </div>
-                           </div>
-                           
-                           <div class="col-lg-6 mb-4">
-                              <div class="faq-card">
-                                 <div class="faq-question-new">
-                                    <i class="fa fa-laptop faq-icon-new"></i>
-                                    <h5>¿Se requiere una computadora para usar los kits?</h5>
-                                    <i class="fa fa-chevron-down faq-arrow-new"></i>
-                                 </div>
-                                 <div class="faq-answer-new">
-                                    <p>Depende del kit. El Kit 1205 no requiere PC. Los kits 1269, 1300, 1409 y 1204RR sí necesitan computadora para programación. Algunos también soportan tablets o dispositivos móviles con Bluetooth.</p>
-                                 </div>
-                              </div>
-                           </div>
-                           
-                           <div class="col-lg-6 mb-4">
-                              <div class="faq-card">
-                                 <div class="faq-question-new">
-                                    <i class="fa fa-credit-card faq-icon-new"></i>
-                                    <h5>¿Qué formas de pago aceptan?</h5>
-                                    <i class="fa fa-chevron-down faq-arrow-new"></i>
-                                 </div>
-                                 <div class="faq-answer-new">
-                                    <p>Aceptamos transferencia bancaria, depósito, tarjetas de crédito y débito. Para instituciones educativas ofrecemos planes de pago especiales y presupuestos personalizados. Contáctanos para más detalles.</p>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- blog section end -->
-
 
       <!-- contact section start -->
    <div class="contact_section layout_padding" id="contacto">
@@ -1620,8 +2055,8 @@ window.addEventListener('scroll', function() {
    }
 });
 
-// Smooth scroll para los enlaces del sidebar
-document.querySelectorAll('.sidebar-item').forEach(item => {
+// Smooth scroll para los enlaces del sidebar (incluyendo subitems)
+document.querySelectorAll('.sidebar-item, .sidebar-subitem').forEach(item => {
    item.addEventListener('click', function(e) {
       e.preventDefault();
       const targetId = this.getAttribute('href');

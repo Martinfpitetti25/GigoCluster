@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      <!-- site metas -->
+      <title>Nosotros - Clúster ISAE | Instituto y Equipo</title>
+      <meta name="description" content="Conocé el Instituto Superior Albert Einstein y el Clúster Tecnológico. Más de 30 años de trayectoria en educación STEAM.">
+      <meta name="keywords" content="ISAE, cluster tecnologico, equipo, instituto albert einstein, educacion STEAM">
+      
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>" type="image/svg+xml" />
+      <!-- font css -->
+      <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- font awesome css -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      
+      <!-- Custom Responsive Styles -->
+      <style>
+         /* Navbar responsive fixes */
+         .navbar-toggler {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            padding: 8px 10px;
+         }
+         
+         .navbar-toggler:focus {
+            outline: none;
+            box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
+         }
+         
+         @media (max-width: 991px) {
+            .navbar-collapse {
+               background: rgba(30, 60, 114, 0.98);
+               margin-top: 15px;
+               padding: 15px;
+               border-radius: 8px;
+            }
+            
+            .navbar-nav .nav-item {
+               margin: 8px 0 !important;
+               width: 100%;
+            }
+            
+            .navbar-nav .nav-link,
+            .navbar-nav .nav-btn {
+               text-align: center;
+               display: block;
+               width: 100%;
+               padding: 12px 20px !important;
+            }
+            
+            .navbar-nav .nav-item.active .nav-link {
+               background: rgba(255, 107, 53, 0.2);
+            }
+         }
+         
+         @media (max-width: 576px) {
+            .navbar-brand {
+               font-size: 1.1rem !important;
+            }
+            
+            .navbar-nav .nav-link,
+            .navbar-nav .nav-btn {
+               font-size: 14px;
+               padding: 10px 15px !important;
+            }
+         }
+         
+         /* ========================================
+            COMPLETE MOBILE OPTIMIZATION - NOSOTROS
+            ======================================== */
+         
+         @media (max-width: 768px) {
+            * {
+               -webkit-tap-highlight-color: rgba(255, 107, 53, 0.2);
+            }
+            
+            body {
+               font-size: 14px;
+               padding-bottom: 80px;
+            }
+            
+            .container {
+               padding-left: 20px;
+               padding-right: 20px;
+            }
+            
+            h1, h2, h3, h4, h5, h6 {
+               word-wrap: break-word;
+               overflow-wrap: break-word;
+            }
+            
+            h1, h2 {
+               font-size: 24px !important;
+            }
+            
+            h3 {
+               font-size: 20px !important;
+            }
+            
+            h4 {
+               font-size: 18px !important;
+            }
+            
+            img {
+               max-width: 100%;
+               height: auto;
+               display: block;
+               margin: 15px auto;
+            }
+            
+            p, li {
+               font-size: 14px !important;
+               line-height: 1.7;
+            }
+            
+            a, button, .btn {
+               min-height: 44px;
+               display: inline-flex;
+               align-items: center;
+               padding: 10px 15px;
+            }
+            
+            section {
+               padding: 40px 0 !important;
+            }
+            
+            .row {
+               flex-direction: column;
+            }
+            
+            .col-md-3,
+            .col-md-4,
+            .col-md-6,
+            .col-md-8,
+            .col-md-12 {
+               width: 100% !important;
+               max-width: 100% !important;
+               margin-bottom: 25px;
+            }
+            
+            .floating-sidebar {
+               position: fixed !important;
+               bottom: 0;
+               left: 0;
+               right: 0;
+               top: auto !important;
+               width: 100%;
+               transform: none !important;
+               flex-direction: row !important;
+               justify-content: space-around;
+               background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+               padding: 12px 15px;
+               border-radius: 0;
+               gap: 8px;
+               box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
+               z-index: 999;
+            }
+            
+            .sidebar-item {
+               width: 50px !important;
+               height: 50px !important;
+            }
+            
+            .sidebar-tooltip {
+               display: none !important;
+            }
+            
+            .back-to-top {
+               bottom: 75px !important;
+               right: 15px;
+               width: 45px;
+               height: 45px;
+            }
+         }
+         
+         @media (max-width: 576px) {
+            h1, h2 {
+               font-size: 22px !important;
+            }
+            
+            h3 {
+               font-size: 18px !important;
+            }
+            
+            p, li {
+               font-size: 13px !important;
+            }
+            
+            .sidebar-item {
+               width: 45px !important;
+               height: 45px !important;
+            }
+            
+            .back-to-top {
+               bottom: 70px !important;
+               width: 40px;
+               height: 40px;
+            }
+         }
+      </style>
+   </head>
+   <body>
+      <!-- header section start -->
+      <header class="header_section">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg custom_nav-container d-flex align-items-center">
+                <a class="navbar-brand brand-orange" href="index.html">CLÚSTER</a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                       <i class="fa fa-bars" style="color: #fff; font-size: 24px;"></i>
+                    </span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav ml-auto text-uppercase d-flex align-items-center">
+                  <li class="nav-item">
+                     <a class="nav-link font-weight-bold px-3 py-2 rounded-pill border border-light" href="index.html"> 
+                        <i class="fa fa-home mr-1"></i>INICIO
+                     </a>
+                  </li>
+                  <li class="nav-item ml-2 active">
+                     <a class="nav-link font-weight-bold px-3 py-2 rounded-pill border border-light" href="nosotros.html">
+                        <i class="fa fa-users mr-1"></i>NOSOTROS <span class="sr-only">(current)</span>
+                     </a>
+                  </li>
+                  <li class="nav-item ml-2">
+                     <a class="btn btn-outline-light nav-btn px-3 py-2 rounded-pill" href="faq.html">
+                        <i class="fa fa-question-circle mr-1"></i>FAQ
+                     </a>
+                  </li>
+                    </ul>
+                </div>
+            </nav>
+         </div>
+      </header>
+      <!-- header section end -->
+      
+      <!-- Floating Sidebar Navigation -->
+      <div class="floating-sidebar" id="floatingSidebar">
+         <a href="#isae" class="sidebar-item" data-tooltip="ISAE">
+            <i class="fa fa-graduation-cap"></i>
+            <span class="sidebar-tooltip">ISAE</span>
+         </a>
+         <a href="#cluster" class="sidebar-item" data-tooltip="Clúster">
+            <i class="fa fa-cogs"></i>
+            <span class="sidebar-tooltip">Clúster</span>
+         </a>
+         <a href="#cursos" class="sidebar-item" data-tooltip="Cursos">
+            <i class="fa fa-book"></i>
+            <span class="sidebar-tooltip">Cursos</span>
+         </a>
+         <a href="#equipo" class="sidebar-item" data-tooltip="Equipo">
+            <i class="fa fa-users"></i>
+            <span class="sidebar-tooltip">Equipo</span>
+         </a>
+      </div>
+      <!-- end floating sidebar -->
+      
+      <!-- nosotros section start -->
+      <div class="blog_section layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <h1 class="blog_taital">Conocenos</h1>
+               </div>
+            </div>
+            <div class="blog_section_2">
+               <!-- ISAE Section -->
+               <div class="row mb-5" id="isae">
+                  <div class="col-12">
+                     <div class="info-card-horizontal isae-card">
+                        <div class="row align-items-center">
+                           <div class="col-md-5">
+                              <div class="isae-image-column">
+                                 <div class="isae-img-item">
+                                    <div class="isae-img-wrapper">
+                                       <img src="images/Portfolio08.png" alt="Campus ISAE">
+                                    </div>
+                                    <p class="isae-img-caption">robótica educativa y didáctica</p>
+                                 </div>
+                                 <div class="isae-img-item">
+                                    <div class="isae-img-wrapper">
+                                       <img src="images/Portfolio05.png" alt="Estudiantes ISAE">
+                                    </div>
+                                    <p class="isae-img-caption">Electrónica aplicada al conocimiento</p>
+                                 </div>
+                                 <div class="isae-img-item">
+                                    <div class="isae-img-wrapper">
+                                       <img src="images/Portfolio03.png" alt="Instalaciones ISAE">
+                                    </div>
+                                    <p class="isae-img-caption">Laboratorios y espacios de innovación tecnológica</p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-7">
+                              <div class="info-card-body-horizontal">
+                                 <div class="mb-3">
+                                    <span class="badge badge-success" style="font-size: 1.2rem; padding: 12px 25px; font-weight: 700;">
+                                       <i class="fa fa-calendar mr-2"></i>MÁS DE 30 AÑOS DE TRAYECTORIA
+                                    </span>
+                                 </div>
+                                 <h3 class="info-card-title-horizontal">Instituto Superior Albert Einstein</h3>
+                                 <h5 class="info-card-subtitle-horizontal">"La alegría de ver y entender es el más perfecto don de la naturaleza". -A. Einstein</h5>
+
+                                 <p class="info-card-text-horizontal"><strong>Desde hace más de tres décadas</strong>, en ISAE formamos en robótica y programación con talleres, cursos y proyectos STEAM. Defendemos la libertad, la convivencia democrática, la ética, la justicia y la equidad, con foco en el cuidado del ambiente y las energías limpias.</p>
+
+                                 <div class="isae-highlights">
+                                    <div class="highlight-item">
+                                       <i class="fa fa-graduation-cap highlight-icon"></i>
+                                       <div class="highlight-content">
+                                          <h6>Desarrollo Académico</h6>
+                                          <p>Programas de formación superior con enfoque en investigación científica y tecnológica con fines pacíficos.</p>
+                                       </div>
+                                    </div>
+                                    <div class="highlight-item">
+                                       <i class="fa fa-lightbulb-o highlight-icon"></i>
+                                       <div class="highlight-content">
+                                          <h6>Innovación Continua</h6>
+                                          <p>Compromiso constante con la mejora de la calidad de vida de la población a través de la educación y la tecnología.</p>
+                                       </div>
+                                    </div>
+                                    <div class="highlight-item">
+                                       <i class="fa fa-users highlight-icon"></i>
+                                       <div class="highlight-content">
+                                          <h6>Comunidad Educativa</h6>
+                                          <p>Un espacio de crecimiento integral donde estudiantes, docentes y comunidad trabajan juntos por un futuro mejor.</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               
+               <!-- Clúster Section -->
+               <div class="row mb-5" id="cluster">
+                  <div class="col-12">
+                     <div class="info-card-horizontal cluster-card">
+                        <div class="row align-items-center">
+                           <div class="col-md-7 order-md-1 order-2">
+                              <div class="info-card-body-horizontal">
+                                 <h3 class="info-card-title-horizontal">CLÚSTER TECNOLÓGICO</h3>
+                                 <h5 class="info-card-subtitle-horizontal">Tecnología, desarrollo e innovación</h5>
+
+                                 <p class="info-card-text-horizontal">El Clúster nace como una extensión natural de ISAE para escalar lo que ya sabemos hacer: transformar curiosidad en competencias. Ampliamos el negocio educativo sumando laboratorios, kits, mentores y redes con la industria, para que más personas dentro y fuera del ISAE puedan aprender, especializarse y certificarse en menos tiempo.</p>
+
+                                 <div class="cluster-features">
+                                    <div class="feature-item">
+                                       <div class="feature-icon-box">
+                                          <i class="fa fa-code"></i>
+                                       </div>
+                                       <div class="feature-content">
+                                          <h6>Desarrollo Tecnológico</h6>
+                                          <p>Programación, robótica y tecnologías emergentes aplicadas a la educación y la industria.</p>
+                                       </div>
+                                    </div>
+                                    <div class="feature-item">
+                                       <div class="feature-icon-box">
+                                          <i class="fa fa-flask"></i>
+                                       </div>
+                                       <div class="feature-content">
+                                          <h6>Investigación Aplicada</h6>
+                                          <p>Proyectos de investigación con impacto real en la comunidad y el sector productivo.</p>
+                                       </div>
+                                    </div>
+                                    <div class="feature-item">
+                                       <div class="feature-icon-box">
+                                          <i class="fa fa-rocket"></i>
+                                       </div>
+                                       <div class="feature-content">
+                                          <h6>Innovación Continua</h6>
+                                          <p>Espacio maker para crear, experimentar y desarrollar soluciones innovadoras.</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-5 order-md-2 order-1">
+                              <div class="cluster-image-column">
+                                 <div class="cluster-img-item">
+                                    <div class="cluster-img-wrapper">
+                                       <img src="images/CLuster1.JPG" alt="Cluster Tecnológico">
+                                    </div>
+                                    <p class="cluster-img-caption">Espacios de desarrollo tecnológico y maker</p>
+                                 </div>
+                                 <div class="cluster-img-item">
+                                    <div class="cluster-img-wrapper">
+                                       <img src="images/Cluster2.JPG" alt="Innovación">
+                                    </div>
+                                    <p class="cluster-img-caption">Tecnologia de ultima generación</p>
+                                 </div>
+                                 <div class="cluster-img-item">
+                                    <div class="cluster-img-wrapper">
+                                       <img src="images/Cluster3.JPG" alt="Investigación">
+                                    </div>
+                                    <p class="cluster-img-caption">Robotica educativa y pedagogica</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               
+               <!-- Sección Cursos Polo-Tecnológico -->
+               <div class="row mb-5" id="cursos">
+                  <div class="col-12">
+                     <div class="info-card-horizontal capacitaciones-card">
+                        <div class="row">
+                           <div class="col-12">
+                              <div class="info-card-body-horizontal">
+                                 <h3 class="info-card-title-horizontal">CURSOS POLO-TECNOLÓGICO</h3>
+                                 <h5 class="info-card-subtitle-horizontal">Formación técnica y profesional especializada</h5>
+                                 <p class="info-card-text-horizontal">Cursos y talleres especializados dictados por expertos aliados del clúster, diseñados para potenciar habilidades tecnológicas y profesionales en nuestra comunidad educativa.</p>
+                                 
+                                 <!-- Grilla de cursos -->
+                                 <div class="courses-grid mt-4">
+                                    <!-- Primera fila: 2 cursos -->
+                                    <div class="row mb-3">
+                                       <div class="col-lg-6 mb-3">
+                                          <div class="course-card" data-course="curso1">
+                                             <div class="course-icon-wrapper">
+                                                <i class="fa fa-line-chart course-icon"></i>
+                                             </div>
+                                             <div class="course-content">
+                                                <h6 class="course-title">De Ahorrista a Inversor</h6>
+                                                <p class="course-description">Aprende a gestionar tus finanzas personales y descubre el mundo de las inversiones inteligentes.</p>
+                                                <span class="course-badge">Nivel Inicial</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="col-lg-6 mb-3">
+                                          <div class="course-card" data-course="curso2">
+                                             <div class="course-icon-wrapper">
+                                                <i class="fa fa-android course-icon"></i>
+                                             </div>
+                                             <div class="course-content">
+                                                <h6 class="course-title">Robótica Inicial</h6>
+                                                <p class="course-description">Primeros pasos en robótica educativa. Aprende a construir y programar tus propios robots.</p>
+                                                <span class="course-badge">Nivel Básico</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    
+                                    <div class="row mb-3">
+                                       <div class="col-lg-6 mb-3">
+                                          <div class="course-card" data-course="curso3">
+                                             <div class="course-icon-wrapper">
+                                                <i class="fa fa-cube course-icon"></i>
+                                             </div>
+                                             <div class="course-content">
+                                                <h6 class="course-title">Diseño e Impresión 3D</h6>
+                                                <p class="course-description">Modela objetos 3D y materializa tus ideas usando tecnología de impresión tridimensional.</p>
+                                                <span class="course-badge">Intermedio</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="col-lg-6 mb-3">
+                                          <div class="course-card" data-course="curso4">
+                                             <div class="course-icon-wrapper">
+                                                <i class="fa fa-user-circle course-icon"></i>
+                                             </div>
+                                             <div class="course-content">
+                                                <h6 class="course-title">Docencia y Entornos Digitales</h6>
+                                                <p class="course-description">Herramientas y estrategias para llevar la educación al mundo digital de forma efectiva.</p>
+                                                <span class="course-badge">Docentes</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    
+                                    <!-- Segunda sección de cursos -->
+                                    <div class="row mb-3">
+                                       <div class="col-lg-6 mb-3">
+                                          <div class="course-card" data-course="curso5">
+                                             <div class="course-icon-wrapper">
+                                                <i class="fa fa-code course-icon"></i>
+                                             </div>
+                                             <div class="course-content">
+                                                <h6 class="course-title">Programador Python Básico</h6>
+                                                <p class="course-description">Domina los fundamentos de Python, uno de los lenguajes más demandados en el mercado.</p>
+                                                <span class="course-badge">Programación</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="col-lg-6 mb-3">
+                                          <div class="course-card" data-course="curso6">
+                                             <div class="course-icon-wrapper">
+                                                <i class="fa fa-video-camera course-icon"></i>
+                                             </div>
+                                             <div class="course-content">
+                                                <h6 class="course-title">Productor de Contenidos Digitales</h6>
+                                                <p class="course-description">Crea contenido audiovisual profesional para redes sociales y plataformas digitales.</p>
+                                                <span class="course-badge">Creativo</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    
+                                    <div class="row">
+                                       <div class="col-lg-6 mb-3">
+                                          <div class="course-card" data-course="curso7">
+                                             <div class="course-icon-wrapper">
+                                                <i class="fa fa-laptop course-icon"></i>
+                                             </div>
+                                             <div class="course-content">
+                                                <h6 class="course-title">Desarrollo Web Junior</h6>
+                                                <p class="course-description">Aprende HTML, CSS y JavaScript para crear tus propias páginas web desde cero.</p>
+                                                <span class="course-badge">Web Dev</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="col-lg-6 mb-3">
+                                          <div class="course-card" data-course="curso8">
+                                             <div class="course-icon-wrapper">
+                                                <i class="fa fa-home course-icon"></i>
+                                             </div>
+                                             <div class="course-content">
+                                                <h6 class="course-title">Domótica Inicial</h6>
+                                                <p class="course-description">Automatiza tu hogar con tecnología IoT. Controla luces, temperatura y seguridad inteligente.</p>
+                                                <span class="course-badge">IoT</span>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               
+               <!-- Equipo de Gestión Section -->
+               <div class="row mb-5" id="equipo">
+                  <div class="col-12">
+                     <div class="team-section">
+                        <div class="team-header text-center mb-5">
+                           <h3 class="team-title">Equipo de Gestión</h3>
+                           <p class="team-subtitle">Profesionales comprometidos con la innovación y el desarrollo tecnológico</p>
+                        </div>
+                        
+                        <!-- Director Principal -->
+                        <div class="row justify-content-center mb-5">
+                           <div class="col-lg-5 col-md-8">
+                              <div class="team-card director-card">
+                                 <div class="team-img-wrapper director-img">
+                                    <img src="images/team-img1.png" alt="Director General">
+                                 </div>
+                                 <div class="team-info director-info">
+                                    <h4 class="team-name director-name">ing. José Nicolás Nieto</h4>
+                                    <p class="team-role director-role">Director General del Clúster Tecnológico e ISAE</p>
+                                    <p class="team-description">Líder con amplia trayectoria en gestión de proyectos educativos y tecnológicos. Responsable de la visión estratégica y el desarrollo integral del Clúster Tecnológico, promoviendo la innovación y la excelencia académica.</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        
+                        <div class="row justify-content-center">
+                           <div class="col-lg-2 col-md-6 mb-4">
+                              <div class="team-card">
+                                 <div class="team-img-wrapper">
+                                    <img src="images/team-img1.png" alt="Director">
+                                 </div>
+                                 <div class="team-info">
+                                    <h5 class="team-name">ing. Javier Nicolás Nieto</h5>
+                                    <p class="team-role">Coordinador Jefe de equipo</p>
+                                    <p class="team-description">Soy ingeniero electrónico, con capacidades de liderazgo y comunicación. con gustos además por el desarrollo web y el diseño e impresión 3D</p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-2 col-md-6 mb-4">
+                              <div class="team-card">
+                                 <div class="team-img-wrapper">
+                                    <img src="images/agustin_carta.jpeg" alt="Coordinador">
+                                 </div>
+                                 <div class="team-info">
+                                    <h5 class="team-name">Agustín Herrera</h5>
+                                    <p class="team-role">Coordinador Técnico</p>
+                                    <p class="team-description">Soy estudiante de ingeniería mecatrónica con experiencia en desarrollo de tecnología robótica, inteligencia artificial en machine learning, automatización industrial y domótica.</p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-2 col-md-6 mb-4">
+                              <div class="team-card">
+                                 <div class="team-img-wrapper">
+                                    <img src="images/fran_carta.jpeg" alt="Responsable">
+                                 </div>
+                                 <div class="team-info">
+                                    <h5 class="team-name">Martín Francisco Pitetti</h5>
+                                    <p class="team-role">Coordinador técnico</p>
+                                    <p class="team-description">Soy estudiante de Ingeniería en Sistemas, apasionado por el desarrollo de software, las inteligencias artificiales, el aprendizaje automático y el desarrollo web.</p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-2 col-md-6 mb-4">
+                              <div class="team-card">
+                                 <div class="team-img-wrapper">
+                                    <img src="images/team-img1.png" alt="Asesor">
+                                 </div>
+                                 <div class="team-info">
+                                    <h5 class="team-name">Dis. Ramiro Herrera</h5>
+                                    <p class="team-role">CM, Diseñador gráfico</p>
+                                    <p class="team-description"></p>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-2 col-md-6 mb-4">
+                              <div class="team-card">
+                                 <div class="team-img-wrapper">
+                                    <img src="images/team-img2.png" alt="Micaela Nieto">
+                                 </div>
+                                 <div class="team-info">
+                                    <h5 class="team-name">Lic. Micaela Nieto</h5>
+                                    <p class="team-role">Administradora</p>
+                                    <p class="team-description">Especialista en coordinación y gestión de proyectos educativos.</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- nosotros section end -->
+
+      <!-- Botón flotante volver arriba -->
+      <button id="btn-scroll-top" title="Volver al principio">
+         <i class="fa fa-arrow-up"></i>
+      </button>
+
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      
+      <script>
+         // Floating Sidebar - aparece cuando se hace scroll pasado el navbar
+         window.addEventListener('scroll', function() {
+            const floatingSidebar = document.getElementById('floatingSidebar');
+            const header = document.querySelector('.header_section');
+            const headerHeight = header ? header.offsetHeight : 0;
+            
+            if (window.scrollY > headerHeight) {
+               floatingSidebar.classList.add('visible');
+            } else {
+               floatingSidebar.classList.remove('visible');
+            }
+         });
+
+         // Smooth scroll para los enlaces del sidebar
+         document.querySelectorAll('.sidebar-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+               e.preventDefault();
+               const targetId = this.getAttribute('href');
+               const targetElement = document.querySelector(targetId);
+               
+               if (targetElement) {
+                  targetElement.scrollIntoView({
+                     behavior: 'smooth',
+                     block: 'start'
+                  });
+               }
+            });
+         });
+
+         // Mostrar/ocultar botón volver arriba y scroll suave al top
+         const btnScrollTop = document.getElementById('btn-scroll-top');
+         window.addEventListener('scroll', function() {
+            if (window.scrollY > 200) {
+               btnScrollTop.style.display = 'block';
+            } else {
+               btnScrollTop.style.display = 'none';
+            }
+         });
+         btnScrollTop.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+         });
+      </script>
+   </body>
+</html>
