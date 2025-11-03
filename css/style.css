@@ -175,13 +175,16 @@ html, body {
     border: 2px solid #ff9800;
     background: #fff;
     box-shadow: 0 4px 12px rgba(255, 152, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease, z-index 0.4s ease;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
 }
 
 .kit-extra-info .extra-img:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 8px 20px rgba(255, 152, 0, 0.25);
+    transform: scale(2.5);
+    box-shadow: 0 12px 40px rgba(255, 152, 0, 0.4);
+    z-index: 100;
 }
 
 .kit-extra-info .extra-video {
@@ -2794,39 +2797,41 @@ textarea#comment::placeholder {
 
 .course-card {
     background: #fff;
-    border: 2px solid #ff9800;
-    border-radius: 16px;
-    padding: 20px 15px;
-    text-align: center;
+    border: none;
+    border-left: 4px solid #ff9800;
+    border-radius: 12px;
+    padding: 20px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(255, 152, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
+    gap: 20px;
+    position: relative;
 }
 
 .course-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 24px rgba(255, 152, 0, 0.25);
-    border-color: #e67c00;
+    transform: translateX(8px);
+    box-shadow: 0 8px 24px rgba(255, 152, 0, 0.2);
+    border-left-width: 6px;
 }
 
 .course-icon-wrapper {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto 20px;
+    min-width: 80px;
+    width: 80px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, #ff9800 0%, #ffc107 100%);
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(255,152,0,0.25);
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(255,152,0,0.25);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
+    flex-shrink: 0;
 }
 
 .course-icon-wrapper::before {
@@ -2846,32 +2851,142 @@ textarea#comment::placeholder {
 }
 
 .course-card:hover .course-icon-wrapper {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 12px 30px rgba(255,152,0,0.4);
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 8px 20px rgba(255,152,0,0.35);
 }
 
 .course-icon {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     color: #fff;
     z-index: 1;
     transition: all 0.4s ease;
 }
 
 .course-card:hover .course-icon {
-    transform: scale(1.15) rotate(5deg);
+    transform: scale(1.1);
+}
+
+.course-content {
+    flex: 1;
+    text-align: left;
 }
 
 .course-title {
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 1.1rem;
+    font-weight: 700;
     color: #333;
-    margin: 0;
+    margin: 0 0 8px 0;
     line-height: 1.3;
     transition: color 0.3s ease;
 }
 
 .course-card:hover .course-title {
     color: #ff9800;
+}
+
+.course-description {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.course-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(255, 152, 0, 0.1);
+    color: #ff9800;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+/* Colores específicos por curso */
+.course-card[data-course="curso1"] .course-icon-wrapper {
+    background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+}
+
+.course-card[data-course="curso1"]:hover .course-title {
+    color: #4CAF50;
+}
+
+.course-card[data-course="curso2"] .course-icon-wrapper {
+    background: linear-gradient(135deg, #2196F3 0%, #42A5F5 100%);
+}
+
+.course-card[data-course="curso2"]:hover .course-title {
+    color: #2196F3;
+}
+
+.course-card[data-course="curso3"] .course-icon-wrapper {
+    background: linear-gradient(135deg, #9C27B0 0%, #BA68C8 100%);
+}
+
+.course-card[data-course="curso3"]:hover .course-title {
+    color: #9C27B0;
+}
+
+.course-card[data-course="curso4"] .course-icon-wrapper {
+    background: linear-gradient(135deg, #FF5722 0%, #FF7043 100%);
+}
+
+.course-card[data-course="curso4"]:hover .course-title {
+    color: #FF5722;
+}
+
+.course-card[data-course="curso5"] .course-icon-wrapper {
+    background: linear-gradient(135deg, #00BCD4 0%, #26C6DA 100%);
+}
+
+.course-card[data-course="curso5"]:hover .course-title {
+    color: #00BCD4;
+}
+
+.course-card[data-course="curso6"] .course-icon-wrapper {
+    background: linear-gradient(135deg, #FFC107 0%, #FFD54F 100%);
+}
+
+.course-card[data-course="curso6"]:hover .course-title {
+    color: #FFC107;
+}
+
+.course-card[data-course="curso7"] .course-icon-wrapper {
+    background: linear-gradient(135deg, #E91E63 0%, #F06292 100%);
+}
+
+.course-card[data-course="curso7"]:hover .course-title {
+    color: #E91E63;
+}
+
+.course-card[data-course="curso8"] .course-icon-wrapper {
+    background: linear-gradient(135deg, #607D8B 0%, #78909C 100%);
+}
+
+.course-card[data-course="curso8"]:hover .course-title {
+    color: #607D8B;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .course-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .course-content {
+        text-align: center;
+    }
+    
+    .course-icon-wrapper {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .course-icon {
+        font-size: 2rem;
+    }
 }
 
 /* ROBOTICA DE COMPETICIÓN */
