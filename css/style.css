@@ -1506,6 +1506,83 @@ button {
     padding: 0;
 }
 
+/* Institutional Logos */
+.banner-title-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 30px;
+}
+
+.logo-item {
+    flex-shrink: 0;
+}
+
+.institutional-logo {
+    height: 180px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(0,0,0,0.1));
+    transition: all 0.3s ease;
+}
+
+.institutional-logo:hover {
+    transform: translateY(-5px) scale(1.05);
+    filter: drop-shadow(0 8px 20px rgba(255,152,0,0.3));
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Logos */
+@media (max-width: 992px) {
+    .institutional-logo {
+        height: 140px;
+    }
+    
+    .banner-title-wrapper {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner-title-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .institutional-logo {
+        height: 100px;
+    }
+    
+    .logo-left {
+        order: 0;
+    }
+    
+    .banner_taital {
+        order: 1;
+    }
+    
+    .logo-right {
+        order: 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .institutional-logo {
+        height: 80px;
+    }
+}
+
 /* Banner Hero Content Wrapper */
 .banner-hero-content {
     max-width: 1000px;
@@ -1532,6 +1609,7 @@ button {
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 20px;
+    text-align: center;
     animation: fadeIn 1.2s ease-out;
 }
 
