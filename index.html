@@ -39,6 +39,8 @@
       <link rel="stylesheet" type="text/css" href="css/style.css">
       <!-- Responsive-->
       <link rel="stylesheet" href="css/responsive.css">
+      <!-- Mobile Optimization - EXPERT LEVEL -->
+      <link rel="stylesheet" href="css/mobile-optimization.css">
       <!-- fevicon -->
       <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>" type="image/svg+xml" />
       <!-- font css -->
@@ -195,90 +197,7 @@
             }
          }
          
-         /* Mobile Sidebar - Bottom Bar */
-         @media (max-width: 768px) {
-            .floating-sidebar {
-               position: fixed !important;
-               bottom: 0;
-               left: 0;
-               right: 0;
-               top: auto !important;
-               width: 100%;
-               transform: none !important;
-               flex-direction: row !important;
-               justify-content: space-around;
-               background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-               padding: 12px 15px;
-               border-radius: 0;
-               gap: 8px;
-               box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
-               z-index: 999;
-            }
-            
-            .floating-sidebar.visible {
-               opacity: 1 !important;
-               visibility: visible !important;
-            }
-            
-            .sidebar-item {
-               width: 50px !important;
-               height: 50px !important;
-               display: flex;
-               align-items: center;
-               justify-content: center;
-               background: rgba(255, 255, 255, 0.1);
-               border-radius: 12px;
-               transition: all 0.3s ease;
-            }
-            
-            .sidebar-item:hover,
-            .sidebar-item:active {
-               background: rgba(255, 107, 53, 0.3);
-               transform: translateY(-3px);
-            }
-            
-            .sidebar-item i {
-               font-size: 22px;
-            }
-            
-            .sidebar-tooltip {
-               display: none !important;
-            }
-            
-            .sidebar-dropdown-wrapper .sidebar-submenu {
-               display: none !important;
-            }
-            
-            .sidebar-arrow {
-               display: none !important;
-            }
-         }
-         
-         @media (max-width: 576px) {
-            .floating-sidebar {
-               padding: 10px 12px;
-            }
-            
-            .sidebar-item {
-               width: 45px !important;
-               height: 45px !important;
-            }
-            
-            .sidebar-item i {
-               font-size: 20px;
-            }
-         }
-         
-         @media (max-width: 375px) {
-            .sidebar-item {
-               width: 40px !important;
-               height: 40px !important;
-            }
-            
-            .sidebar-item i {
-               font-size: 18px;
-            }
-         }
+         /* Mobile Sidebar - Estilos movidos a mobile-optimization.css */
          
          /* ========================================
             COMPLETE MOBILE OPTIMIZATION
@@ -573,81 +492,6 @@
          }
          
          /* Additional Mobile Responsive Styles for Index Page */
-         
-         /* Navbar responsive */
-         @media (max-width: 991px) {
-            .header_section {
-               padding: 10px 0;
-            }
-            
-            .navbar {
-               padding: 8px 0;
-            }
-            
-            .navbar-brand {
-               font-size: 1.3rem !important;
-            }
-            
-            .navbar-toggler {
-               border: 2px solid rgba(255, 255, 255, 0.5);
-               padding: 8px 10px;
-            }
-            
-            .navbar-toggler:focus {
-               outline: none;
-               box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
-            }
-            
-            .navbar-collapse {
-               background: rgba(30, 60, 114, 0.98);
-               margin-top: 15px;
-               padding: 15px;
-               border-radius: 8px;
-            }
-            
-            .navbar-nav {
-               width: 100%;
-            }
-            
-            .navbar-nav .nav-item {
-               margin: 8px 0 !important;
-               width: 100%;
-            }
-            
-            .navbar-nav .nav-link,
-            .navbar-nav .nav-btn {
-               text-align: center;
-               display: block;
-               width: 100%;
-               padding: 12px 20px !important;
-               border-radius: 25px !important;
-            }
-            
-            .navbar-nav .nav-item.active .nav-link {
-               background: rgba(255, 107, 53, 0.2);
-            }
-            
-            .navbar-nav .nav-link:hover {
-               background: rgba(255, 255, 255, 0.15);
-            }
-         }
-         
-         @media (max-width: 576px) {
-            .navbar-brand {
-               font-size: 1.1rem !important;
-            }
-            
-            .navbar-nav .nav-link,
-            .navbar-nav .nav-btn {
-               font-size: 14px;
-               padding: 10px 15px !important;
-            }
-            
-            .navbar-nav .nav-link i,
-            .navbar-nav .nav-btn i {
-               margin-right: 8px;
-            }
-         }
          
          /* Banner section responsive */
          @media (max-width: 768px) {
@@ -1842,9 +1686,9 @@ Bloques modulares de Bio-ABS (certificados en la Unión Europea) para un aprendi
                         </a>
                      </li>
                      <li>
-                        <a href="mailto:demo@gmail.com">
+                        <a href="mailto:cluster.isae.lr@gmail.com">
                            <i class="fa fa-envelope" aria-hidden="true"></i>
-                           <span class="padding_left_15">demo@gmail.com</span>
+                           <span class="padding_left_15">cluster.isae.lr@gmail.com</span>
                         </a>
                      </li>
                   </ul>

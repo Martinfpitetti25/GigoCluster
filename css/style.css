@@ -334,6 +334,182 @@ html, body {
     padding: 10px 32px;
     margin-top: 18px;
 }
+
+/* Header sticky/fixed positioning */
+.header_section {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Mobile navbar centering fix */
+@media (max-width: 991px) {
+    .header_section {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
+        padding: 8px 0;
+    }
+    
+    .custom_nav-container {
+        padding: 12px 15px;
+        margin: 8px auto;
+        width: 92%;
+        max-width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+    }
+    
+    .navbar {
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+    }
+    
+    .navbar-brand {
+        margin: 0;
+        font-size: 1.3rem;
+        padding: 8px 16px;
+    }
+    
+    .navbar-toggler {
+        border: none;
+        padding: 8px;
+        border-radius: 8px;
+        background: rgba(255, 152, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .navbar-toggler:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.2);
+    }
+    
+    .navbar-toggler:hover {
+        background: rgba(255, 152, 0, 0.2);
+    }
+    
+    .navbar-collapse {
+        text-align: center;
+        margin-top: 15px;
+        padding-top: 15px;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .navbar-nav {
+        align-items: center;
+        width: 100%;
+    }
+    
+    .navbar-nav .nav-item {
+        width: 100%;
+        text-align: center;
+        margin: 6px 0;
+    }
+    
+    .navbar-nav .nav-link,
+    .navbar-nav .nav-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 12px 20px;
+        font-size: 0.95rem;
+        border-radius: 24px;
+        transition: all 0.3s ease;
+    }
+    
+    .navbar-nav .nav-link i,
+    .navbar-nav .nav-btn i {
+        margin-right: 8px;
+        font-size: 1.1rem;
+    }
+    
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 152, 0, 0.2);
+    }
+}
+
+@media (max-width: 768px) {
+    .custom_nav-container {
+        width: 94%;
+        padding: 10px 12px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .custom_nav-container {
+        padding: 8px 10px;
+        margin: 10px auto;
+        width: 95%;
+        border-radius: 10px;
+    }
+    
+    .navbar-brand {
+        font-size: 1.1rem;
+        padding: 5px 10px;
+    }
+    
+    .navbar-toggler {
+        padding: 6px;
+    }
+    
+    .navbar-collapse {
+        margin-top: 12px;
+        padding-top: 12px;
+    }
+    
+    .navbar-nav .nav-item {
+        margin: 5px 0;
+    }
+    
+    .navbar-nav .nav-link,
+    .navbar-nav .nav-btn {
+        padding: 10px 16px;
+        font-size: 0.88rem;
+    }
+    
+    .navbar-nav .nav-link i,
+    .navbar-nav .nav-btn i {
+        font-size: 1rem;
+        margin-right: 6px;
+    }
+}
+
+@media (max-width: 400px) {
+    .custom_nav-container {
+        width: 96%;
+        padding: 8px;
+    }
+    
+    .navbar-brand {
+        font-size: 1rem;
+    }
+    
+    .navbar-nav .nav-link,
+    .navbar-nav .nav-btn {
+        padding: 9px 14px;
+        font-size: 0.82rem;
+    }
+    
+    .navbar-nav .nav-link i,
+    .navbar-nav .nav-btn i {
+        display: none;
+    }
+}
+
 .navbar-nav.ml-auto.text-uppercase.d-flex.align-items-center {
     gap: 18px;
 }
@@ -1155,6 +1331,25 @@ body {
     line-height: 1.80857;
     font-weight: normal;
     overflow-x: hidden;
+}
+
+/* Padding for fixed navbar on mobile */
+@media (max-width: 991px) {
+    body {
+        padding-top: 90px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 85px;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding-top: 80px;
+    }
 }
 
 a {
@@ -4364,3 +4559,343 @@ textarea#comment::placeholder {
         padding: 8px 15px;
     }
 }
+
+/* ========================================
+   BOOTSTRAP RESPONSIVE ENHANCEMENTS
+   Mejoras adicionales sin romper código existente
+   ======================================== */
+
+/* Container responsive improvements */
+@media (max-width: 1400px) {
+    .container-fluid {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* Grid system enhancements para mantener diseño actual */
+@media (max-width: 991px) {
+    .row {
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    
+    [class*="col-"] {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Forzar columnas full-width en mobile manteniendo estilos existentes */
+    .col-md-6,
+    .col-md-4,
+    .col-md-3,
+    .col-lg-6,
+    .col-lg-4,
+    .col-lg-3 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    
+    .row {
+        margin-right: -10px;
+        margin-left: -10px;
+    }
+    
+    [class*="col-"] {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .container-fluid {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+/* Typography responsive mejorado */
+@media (max-width: 768px) {
+    h1 {
+        font-size: calc(1.5rem + 1.5vw);
+    }
+    
+    h2 {
+        font-size: calc(1.3rem + 1vw);
+    }
+    
+    h3 {
+        font-size: calc(1.2rem + 0.5vw);
+    }
+    
+    h4 {
+        font-size: calc(1.1rem + 0.3vw);
+    }
+    
+    p, li {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: calc(1.3rem + 1vw);
+    }
+    
+    h2 {
+        font-size: calc(1.2rem + 0.8vw);
+    }
+    
+    p, li {
+        font-size: 0.9rem;
+    }
+}
+
+/* Spacing utilities responsive */
+@media (max-width: 768px) {
+    .py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+    
+    .my-5 {
+        margin-top: 2rem !important;
+        margin-bottom: 2rem !important;
+    }
+    
+    .px-5 {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .py-5 {
+        padding-top: 1.5rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+    
+    .my-5 {
+        margin-top: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+}
+
+/* Button responsive improvements */
+@media (max-width: 768px) {
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .btn-lg {
+        padding: 0.8rem 1.8rem;
+        font-size: 1rem;
+    }
+    
+    .btn-sm {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Image responsive improvements */
+@media (max-width: 768px) {
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Table responsive wrapper */
+@media (max-width: 768px) {
+    .table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    table {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+    
+    table th,
+    table td {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Card responsive improvements */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .card-body {
+        padding: 1.25rem;
+    }
+    
+    .card-title {
+        font-size: 1.1rem;
+    }
+    
+    .card-text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-body {
+        padding: 1rem;
+    }
+}
+
+/* Navbar bootstrap enhancements */
+@media (max-width: 991px) {
+    .navbar-nav {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 0.75rem 1rem;
+    }
+    
+    .navbar-toggler {
+        padding: 0.5rem 0.75rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Display utilities responsive */
+@media (max-width: 768px) {
+    .d-md-none {
+        display: none !important;
+    }
+    
+    .d-md-block {
+        display: block !important;
+    }
+    
+    .d-md-flex {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .d-sm-none {
+        display: none !important;
+    }
+    
+    .d-sm-block {
+        display: block !important;
+    }
+    
+    .d-sm-flex {
+        display: flex !important;
+    }
+}
+
+/* Text alignment responsive */
+@media (max-width: 768px) {
+    .text-md-center {
+        text-align: center !important;
+    }
+    
+    .text-md-left {
+        text-align: left !important;
+    }
+    
+    .text-md-right {
+        text-align: right !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .text-sm-center {
+        text-align: center !important;
+    }
+}
+
+/* Flexbox utilities responsive */
+@media (max-width: 768px) {
+    .flex-md-column {
+        flex-direction: column !important;
+    }
+    
+    .flex-md-row {
+        flex-direction: row !important;
+    }
+    
+    .justify-content-md-center {
+        justify-content: center !important;
+    }
+    
+    .align-items-md-center {
+        align-items: center !important;
+    }
+}
+
+/* Width utilities responsive */
+@media (max-width: 768px) {
+    .w-md-100 {
+        width: 100% !important;
+    }
+    
+    .w-md-75 {
+        width: 75% !important;
+    }
+    
+    .w-md-50 {
+        width: 50% !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .w-sm-100 {
+        width: 100% !important;
+    }
+}
+
+/* Overflow control */
+body {
+    overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+    .container,
+    .container-fluid {
+        overflow-x: hidden;
+    }
+}
+
+/* ========================================
+   END BOOTSTRAP RESPONSIVE ENHANCEMENTS
+   ======================================== */
+

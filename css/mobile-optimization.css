@@ -1,0 +1,1540 @@
+/*==============================================================================
+  OPTIMIZACIÓN MÓVIL PROFESIONAL - GIGO CLUSTER
+  Diseñado para funcionar perfectamente en todos los dispositivos móviles
+  Sin afectar el diseño desktop original
+  ==============================================================================*/
+
+/* ==============================================================================
+   1. RESET Y CONFIGURACIÓN BASE MÓVIL
+   ============================================================================== */
+
+/* Prevenir zoom indeseado en inputs en iOS */
+@media screen and (max-width: 991px) {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        font-size: 16px !important;
+    }
+}
+
+/* Mejorar tap targets en móviles */
+@media screen and (max-width: 991px) {
+    a, button, .btn, .kit-btn, .nav-link {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* ==============================================================================
+   2. HEADER Y NAVBAR MÓVIL
+   ============================================================================== */
+
+/* Header fijo optimizado */
+@media (max-width: 991px) {
+    .header_section {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1000;
+        background-image: url(../images/banner-bg.png);
+        background-size: cover;
+        padding: 5px 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    body {
+        padding-top: 70px;
+    }
+    
+    .custom_nav-container {
+        background: rgba(255, 255, 255, 0.98);
+        padding: 8px 12px;
+        margin: 5px auto;
+        width: 92%;
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        backdrop-filter: blur(10px);
+    }
+    
+    .navbar {
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        flex-wrap: nowrap;
+    }
+    
+    .navbar-brand {
+        margin: 0;
+        font-size: 1.1rem;
+        padding: 6px 12px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+    
+    .navbar-toggler {
+        border: none;
+        padding: 6px 8px;
+        border-radius: 8px;
+        background: rgba(255, 152, 0, 0.1);
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+    }
+    
+    .navbar-toggler:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.2);
+    }
+    
+    .navbar-toggler:hover {
+        background: rgba(255, 152, 0, 0.2);
+    }
+    
+    .navbar-toggler-icon i {
+        font-size: 20px;
+        color: #fff;
+    }
+    
+    .navbar-collapse {
+        text-align: center;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .navbar-nav {
+        align-items: center;
+        width: 100%;
+    }
+    
+    .navbar-nav .nav-item {
+        width: 100%;
+        text-align: center;
+        margin: 4px 0;
+    }
+    
+    .navbar-nav .nav-link,
+    .navbar-nav .nav-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 10px 16px;
+        font-size: 0.88rem;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+    }
+    
+    .navbar-nav .nav-link i,
+    .navbar-nav .nav-btn i {
+        margin-right: 6px;
+        font-size: 1rem;
+    }
+    
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 152, 0, 0.2);
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 65px;
+    }
+    
+    .custom_nav-container {
+        width: 94%;
+        padding: 7px 10px;
+    }
+    
+    .navbar-brand {
+        font-size: 1rem;
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        padding-top: 60px;
+    }
+    
+    .custom_nav-container {
+        padding: 6px 8px;
+        margin: 5px auto;
+        width: 95%;
+        border-radius: 8px;
+    }
+    
+    .navbar-brand {
+        font-size: 0.95rem;
+        padding: 4px 8px;
+    }
+    
+    .navbar-toggler {
+        padding: 5px 7px;
+    }
+    
+    .navbar-collapse {
+        margin-top: 8px;
+        padding-top: 8px;
+    }
+    
+    .navbar-nav .nav-item {
+        margin: 3px 0;
+    }
+    
+    .navbar-nav .nav-link,
+    .navbar-nav .nav-btn {
+        padding: 8px 14px;
+        font-size: 0.82rem;
+    }
+    
+    .navbar-nav .nav-link i,
+    .navbar-nav .nav-btn i {
+        font-size: 0.9rem;
+        margin-right: 5px;
+    }
+}
+
+@media (max-width: 400px) {
+    .custom_nav-container {
+        width: 96%;
+        padding: 5px 7px;
+    }
+    
+    .navbar-brand {
+        font-size: 0.9rem;
+        padding: 4px 7px;
+    }
+    
+    .navbar-nav .nav-link,
+    .navbar-nav .nav-btn {
+        padding: 7px 12px;
+        font-size: 0.78rem;
+    }
+    
+    .navbar-nav .nav-link i,
+    .navbar-nav .nav-btn i {
+        display: none;
+    }
+}
+
+/* ==============================================================================
+   3. BANNER SECTION MÓVIL
+   ============================================================================== */
+
+@media (max-width: 991px) {
+    .banner_section {
+        padding: 60px 15px 40px;
+    }
+    
+    .banner-center {
+        padding: 0 20px;
+    }
+    
+    .banner_taital_main {
+        padding: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .banner_section {
+        padding: 50px 15px 35px;
+    }
+    
+    .banner-subtitle {
+        font-size: 14px;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+    }
+    
+    .banner-title-wrapper {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 25px;
+    }
+    
+    .institutional-logo {
+        height: 100px;
+    }
+    
+    .banner_taital {
+        font-size: 42px;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+    
+    .banner-brand {
+        font-size: 48px;
+    }
+    
+    .banner-slogan {
+        font-size: 32px;
+    }
+    
+    .banner_text {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 25px;
+        padding: 0 10px;
+    }
+    
+    .banner-features {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 20px;
+    }
+    
+    .feature-item {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+        justify-content: center;
+        padding: 10px 20px;
+    }
+    
+    .feature-item i {
+        font-size: 20px;
+    }
+    
+    .feature-item span {
+        font-size: 14px;
+    }
+    
+    .kits-section-title {
+        margin: 30px 0 25px;
+    }
+    
+    .kits-section-title h2 {
+        font-size: 28px;
+        margin-bottom: 8px;
+    }
+    
+    .kits-section-title p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .banner_section {
+        padding: 45px 10px 30px;
+    }
+    
+    .banner-subtitle {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+    
+    .institutional-logo {
+        height: 80px;
+    }
+    
+    .banner_taital {
+        font-size: 36px;
+        gap: 6px;
+    }
+    
+    .banner-brand {
+        font-size: 40px;
+    }
+    
+    .banner-slogan {
+        font-size: 28px;
+    }
+    
+    .banner_text {
+        font-size: 14px;
+        padding: 0 5px;
+    }
+    
+    .feature-item {
+        max-width: 100%;
+        padding: 8px 16px;
+    }
+    
+    .feature-item i {
+        font-size: 18px;
+    }
+    
+    .feature-item span {
+        font-size: 13px;
+    }
+    
+    .kits-section-title h2 {
+        font-size: 24px;
+    }
+    
+    .kits-section-title p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 400px) {
+    .banner_taital {
+        font-size: 32px;
+    }
+    
+    .banner-brand {
+        font-size: 36px;
+    }
+    
+    .banner-slogan {
+        font-size: 24px;
+    }
+    
+    .institutional-logo {
+        height: 70px;
+    }
+}
+
+/* ==============================================================================
+   4. KIT BUTTONS MÓVIL
+   ============================================================================== */
+
+@media (max-width: 991px) {
+    .kit-buttons {
+        margin-top: 30px;
+        padding: 0 10px;
+    }
+    
+    .kit-buttons .row {
+        margin-bottom: 20px;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .kit-buttons .row {
+        gap: 15px;
+    }
+    
+    .kit-btn-col {
+        flex: 0 0 auto;
+    }
+    
+    .kit-btn {
+        width: 120px;
+        height: 120px;
+        padding: 12px;
+        border-width: 2px;
+    }
+    
+    .kit-img {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .kit-label {
+        width: 120px;
+        font-size: 14px;
+        min-height: 50px;
+        padding: 8px 6px;
+        margin-top: 10px;
+    }
+    
+    .expansion-btn {
+        width: 120px;
+        padding: 10px 16px;
+        font-size: 14px;
+        margin-top: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .kit-buttons {
+        padding: 0 5px;
+    }
+    
+    .kit-buttons .row {
+        gap: 12px;
+    }
+    
+    .kit-btn {
+        width: 105px;
+        height: 105px;
+        padding: 10px;
+    }
+    
+    .kit-img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .kit-label {
+        width: 105px;
+        font-size: 12px;
+        min-height: 45px;
+        padding: 6px 4px;
+        margin-top: 8px;
+    }
+    
+    .expansion-btn {
+        width: 105px;
+        padding: 8px 12px;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .kit-buttons .row {
+        gap: 10px;
+    }
+    
+    .kit-btn {
+        width: 95px;
+        height: 95px;
+        padding: 8px;
+    }
+    
+    .kit-img {
+        width: 75px;
+        height: 75px;
+    }
+    
+    .kit-label {
+        width: 95px;
+        font-size: 11px;
+        min-height: 40px;
+        padding: 5px 3px;
+    }
+    
+    .expansion-btn {
+        width: 95px;
+        padding: 7px 10px;
+        font-size: 11px;
+    }
+}
+
+/* ==============================================================================
+   5. ABOUT SECTION MÓVIL
+   ============================================================================== */
+
+@media (max-width: 991px) {
+    .about_section {
+        padding: 60px 0 40px;
+    }
+    
+    .about_section .container-fluid {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about_section {
+        padding: 50px 0 35px;
+    }
+    
+    .about_section .row {
+        flex-direction: column;
+    }
+    
+    .about_section .col-lg-6,
+    .about_section .col-md-6,
+    .about_section .col-md-12 {
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    
+    .section-subtitle {
+        font-size: 13px;
+    }
+    
+    .section-title {
+        font-size: 28px;
+        line-height: 1.3;
+        padding: 0 10px;
+    }
+    
+    .section-description {
+        font-size: 15px;
+        padding: 0 10px;
+    }
+    
+    .about_img-wrapper {
+        margin-bottom: 20px;
+    }
+    
+    .about_img img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .about_taital {
+        font-size: 28px;
+        text-align: center;
+        padding: 0 10px;
+    }
+    
+    .about_text {
+        font-size: 15px;
+        text-align: center;
+        padding: 0 15px;
+        line-height: 1.7;
+    }
+    
+    .about-features {
+        flex-direction: column;
+    }
+    
+    .feature-card {
+        margin-bottom: 15px;
+    }
+    
+    .stats-container {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .stat-item {
+        flex: 0 0 calc(50% - 10px);
+        min-width: 140px;
+    }
+    
+    .stat-icon i {
+        font-size: 2rem;
+    }
+    
+    .stat-number {
+        font-size: 36px;
+    }
+    
+    .stat-label {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .about_section {
+        padding: 40px 0 30px;
+    }
+    
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .section-description {
+        font-size: 14px;
+    }
+    
+    .about_taital {
+        font-size: 24px;
+    }
+    
+    .about_text {
+        font-size: 14px;
+    }
+    
+    .stat-item {
+        flex: 0 0 100%;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    
+    .stat-number {
+        font-size: 32px;
+    }
+    
+    .stat-label {
+        font-size: 13px;
+    }
+}
+
+/* ==============================================================================
+   6. KITS SECTION MÓVIL
+   ============================================================================== */
+
+@media (max-width: 991px) {
+    .models_section {
+        padding: 60px 0 40px;
+    }
+    
+    .models_section .container {
+        padding: 0 20px;
+    }
+    
+    .models_taital {
+        font-size: 32px;
+        text-align: center;
+        padding: 0 15px;
+    }
+    
+    .models_section_2 .row {
+        flex-direction: column-reverse;
+        margin-bottom: 40px;
+    }
+    
+    .models_section_2 .col-md-6 {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .models_img {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .models_img img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .models_section {
+        padding: 50px 0 35px;
+    }
+    
+    .models_taital {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    .carolo_text {
+        font-size: 24px;
+        line-height: 1.3;
+        padding: 0 10px;
+        margin-bottom: 15px;
+    }
+    
+    .number_text {
+        font-size: 22px;
+    }
+    
+    .ullamco_text {
+        font-size: 15px;
+        line-height: 1.7;
+        padding: 0 15px;
+        margin-bottom: 20px;
+    }
+    
+    .kit-tags {
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+        padding: 0 10px;
+    }
+    
+    .kit-tag {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    
+    .kit-tag i {
+        font-size: 13px;
+    }
+    
+    .price_main {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 0 15px;
+    }
+    
+    .vermas_btn,
+    .read_btn {
+        width: 100%;
+        max-width: 300px;
+        margin: 0;
+        text-align: center;
+    }
+    
+    .vermas_btn a,
+    .read_btn a {
+        display: block;
+        width: 100%;
+    }
+    
+    .btn-vermas {
+        width: 100%;
+        max-width: 300px;
+        padding: 12px 24px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .models_section {
+        padding: 40px 0 30px;
+    }
+    
+    .models_taital {
+        font-size: 24px;
+    }
+    
+    .carolo_text {
+        font-size: 20px;
+    }
+    
+    .number_text {
+        font-size: 20px;
+    }
+    
+    .ullamco_text {
+        font-size: 14px;
+    }
+    
+    .kit-tag {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+    
+    .btn-vermas {
+        font-size: 13px;
+        padding: 10px 20px;
+    }
+}
+
+/* ==============================================================================
+   7. KIT EXTRA INFO MÓVIL
+   ============================================================================== */
+
+@media (max-width: 991px) {
+    .kit-extra-info {
+        margin: 30px 10px 0;
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .kit-extra-info {
+        padding: 25px 15px;
+        margin: 25px 5px 0;
+        border-radius: 16px;
+    }
+    
+    .kit-extra-info .extra-content h4 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .kit-extra-info .row {
+        flex-direction: column;
+    }
+    
+    .kit-extra-info .col-md-6 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .kit-extra-info li {
+        font-size: 14px;
+        padding-left: 28px;
+        margin-bottom: 10px;
+    }
+    
+    .kit-extra-info p {
+        font-size: 14px;
+        padding: 12px;
+    }
+    
+    .kit-extra-info .extra-images {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    
+    .kit-extra-info .extra-img {
+        width: 100px;
+        max-width: 45%;
+    }
+    
+    .kit-extra-info .extra-video iframe {
+        height: 250px;
+        border-radius: 12px;
+    }
+}
+
+@media (max-width: 576px) {
+    .kit-extra-info {
+        padding: 20px 12px;
+    }
+    
+    .kit-extra-info .extra-content h4 {
+        font-size: 18px;
+    }
+    
+    .kit-extra-info li {
+        font-size: 13px;
+    }
+    
+    .kit-extra-info p {
+        font-size: 13px;
+        padding: 10px;
+    }
+    
+    .kit-extra-info .extra-img {
+        width: 90px;
+    }
+    
+    .kit-extra-info .extra-video iframe {
+        height: 220px;
+    }
+}
+
+/* ==============================================================================
+   8. EXPANSION KITS MÓVIL
+   ============================================================================== */
+
+@media (max-width: 991px) {
+    .expansion-intro {
+        padding: 0 15px;
+    }
+    
+    .expansion-main-title {
+        font-size: 28px;
+    }
+    
+    .expansion-subtitle {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .expansion-kit {
+        margin-bottom: 35px;
+        padding: 0 10px;
+    }
+    
+    .expansion-kit .row {
+        flex-direction: column;
+    }
+    
+    .expansion-kit .col-md-5,
+    .expansion-kit .col-md-7 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .expansion-main-title {
+        font-size: 24px;
+        line-height: 1.3;
+    }
+    
+    .expansion-subtitle {
+        font-size: 14px;
+    }
+    
+    .expansion-title {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+    
+    .expansion-lead {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+    
+    .expansion-section h5 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    .expansion-list li {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    
+    .expansion-img-wrapper {
+        margin-bottom: 20px;
+    }
+    
+    .expansion-img {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    .expansion-video iframe {
+        height: 280px;
+    }
+    
+    .expansion-requirements {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .req-badge {
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+    
+    .comparison-card {
+        margin-bottom: 15px;
+    }
+    
+    .comparison-card h5 {
+        font-size: 16px;
+    }
+    
+    .comparison-card p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 576px) {
+    .expansion-main-title {
+        font-size: 20px;
+    }
+    
+    .expansion-subtitle {
+        font-size: 13px;
+    }
+    
+    .expansion-title {
+        font-size: 19px;
+    }
+    
+    .expansion-lead {
+        font-size: 14px;
+    }
+    
+    .expansion-section h5 {
+        font-size: 15px;
+    }
+    
+    .expansion-list li {
+        font-size: 13px;
+    }
+    
+    .expansion-video iframe {
+        height: 240px;
+    }
+}
+
+/* ==============================================================================
+   9. STATS SECTION MÓVIL
+   ============================================================================== */
+
+@media (max-width: 991px) {
+    .choose_section_2 {
+        padding: 50px 0;
+    }
+    
+    .choose_section_2 .container {
+        padding: 0 20px;
+    }
+    
+    .choose_section_2 .row {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .choose_section_2 {
+        padding: 40px 0;
+    }
+    
+    .choose_section_2 .col-lg-4,
+    .choose_section_2 .col-md-6 {
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 25px;
+    }
+    
+    .rated_text {
+        font-size: 48px;
+        margin-bottom: 10px;
+    }
+    
+    .house_text {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .choose_section_2 {
+        padding: 35px 0;
+    }
+    
+    .rated_text {
+        font-size: 42px;
+    }
+    
+    .house_text {
+        font-size: 15px;
+    }
+}
+
+/* ==============================================================================
+   10. CONTACT SECTION MÓVIL
+   ============================================================================== */
+
+@media (max-width: 991px) {
+    .contact_section {
+        padding: 50px 0 90px;
+    }
+    
+    .contact_section .container {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact_section {
+        padding: 40px 0 85px;
+    }
+    
+    .contact_taital {
+        font-size: 32px;
+        margin-bottom: 15px;
+        padding: 0 15px;
+    }
+    
+    .contact_section > div > div {
+        font-size: 15px;
+        padding: 0 15px;
+        line-height: 1.6;
+    }
+    
+    .location_main {
+        margin-top: 25px;
+    }
+    
+    .location_text ul {
+        padding: 0;
+    }
+    
+    .location_text li {
+        margin-bottom: 15px;
+        font-size: 16px;
+    }
+    
+    .location_text li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 20px;
+        background: rgba(255, 152, 0, 0.1);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+    
+    .location_text li a:hover {
+        background: rgba(255, 152, 0, 0.2);
+        transform: translateY(-2px);
+    }
+    
+    .location_text li i {
+        font-size: 20px;
+        margin-right: 12px;
+    }
+    
+    .social_icon {
+        margin-top: 25px;
+    }
+    
+    .social_icon ul {
+        justify-content: center;
+    }
+    
+    .social_icon li {
+        margin: 0 10px;
+    }
+    
+    .social_icon a {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+    
+    .contact-address {
+        font-size: 14px;
+        padding: 0 15px;
+        line-height: 1.7;
+    }
+    
+    .contact-firma {
+        font-size: 13px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact_section {
+        padding: 35px 0 80px;
+    }
+    
+    .contact_taital {
+        font-size: 28px;
+    }
+    
+    .contact_section > div > div {
+        font-size: 14px;
+    }
+    
+    .location_text li {
+        font-size: 15px;
+    }
+    
+    .location_text li a {
+        padding: 10px 16px;
+    }
+    
+    .social_icon a {
+        width: 45px;
+        height: 45px;
+        font-size: 22px;
+    }
+    
+    .contact-address {
+        font-size: 13px;
+    }
+    
+    .contact-firma {
+        font-size: 12px;
+    }
+}
+
+/* ==============================================================================
+   11. SIDEBAR MÓVIL
+   ============================================================================== */
+
+@media (max-width: 768px) {
+    /* Espacio adicional para el sidebar móvil */
+    body {
+        padding-bottom: 70px !important;
+    }
+    
+    .floating-sidebar {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: auto !important;
+        width: 100% !important;
+        transform: none !important;
+        flex-direction: row !important;
+        justify-content: space-around !important;
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%) !important;
+        padding: 10px 15px !important;
+        border-radius: 0 !important;
+        gap: 8px !important;
+        box-shadow: 0 -4px 15px rgba(0,0,0,0.2) !important;
+        z-index: 998 !important;
+    }
+    
+    .floating-sidebar.visible {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    .sidebar-item {
+        width: 50px !important;
+        height: 50px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: rgba(255, 255, 255, 0.1) !important;
+        border-radius: 12px !important;
+        transition: all 0.3s ease !important;
+    }
+    
+    .sidebar-item:hover,
+    .sidebar-item:active {
+        background: rgba(255, 107, 53, 0.3) !important;
+        transform: translateY(-3px) !important;
+    }
+    
+    .sidebar-item i {
+        font-size: 22px !important;
+    }
+    
+    .sidebar-tooltip {
+        display: none !important;
+    }
+    
+    .sidebar-dropdown-wrapper .sidebar-submenu {
+        display: none !important;
+    }
+    
+    .sidebar-arrow {
+        display: none !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .floating-sidebar {
+        padding: 8px 12px !important;
+    }
+    
+    .sidebar-item {
+        width: 45px !important;
+        height: 45px !important;
+    }
+    
+    .sidebar-item i {
+        font-size: 20px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .floating-sidebar {
+        padding: 8px 10px !important;
+    }
+    
+    .sidebar-item {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .sidebar-item i {
+        font-size: 18px !important;
+    }
+}
+
+/* ==============================================================================
+   12. SCROLL TO TOP BUTTON MÓVIL
+   ============================================================================== */
+
+@media (max-width: 768px) {
+    #btn-scroll-top {
+        width: 50px;
+        height: 50px;
+        bottom: 75px;
+        right: 20px;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    #btn-scroll-top {
+        width: 45px;
+        height: 45px;
+        bottom: 70px;
+        right: 15px;
+        font-size: 18px;
+    }
+}
+
+/* ==============================================================================
+   13. UTILIDADES GENERALES MÓVIL
+   ============================================================================== */
+
+/* Prevenir desbordamiento horizontal */
+@media (max-width: 991px) {
+    body, html {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+    
+    .container,
+    .container-fluid {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+/* Mejorar legibilidad de texto */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    
+    p {
+        margin: 15px 0;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+}
+
+/* Espaciado vertical consistente */
+@media (max-width: 768px) {
+    .layout_padding {
+        padding-top: 60px;
+        padding-bottom: 40px;
+    }
+    
+    section {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .layout_padding {
+        padding-top: 50px;
+        padding-bottom: 35px;
+    }
+    
+    section {
+        padding: 35px 0;
+    }
+}
+
+/* Mejorar áreas táctiles */
+@media (max-width: 991px) {
+    button,
+    .btn,
+    a.btn,
+    input[type="submit"],
+    input[type="button"] {
+        min-height: 44px;
+        padding: 12px 20px;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+}
+
+/* ==============================================================================
+   14. OPTIMIZACIONES ESPECÍFICAS PARA PANTALLAS PEQUEÑAS
+   ============================================================================== */
+
+/* iPhone SE, Galaxy Fold y similares (320px - 375px) */
+@media (max-width: 375px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .banner_section {
+        padding: 40px 10px 25px;
+    }
+    
+    .banner_taital {
+        font-size: 28px;
+    }
+    
+    .banner-brand {
+        font-size: 32px;
+    }
+    
+    .banner-slogan {
+        font-size: 22px;
+    }
+    
+    .kit-btn {
+        width: 85px;
+        height: 85px;
+    }
+    
+    .kit-img {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .kit-label {
+        width: 85px;
+        font-size: 10px;
+        min-height: 35px;
+    }
+}
+
+/* ==============================================================================
+   15. MEJORAS DE RENDIMIENTO Y UX MÓVIL
+   ============================================================================== */
+
+/* Smooth scrolling optimizado */
+@media (max-width: 991px) {
+    html {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Eliminar delays de tap en iOS */
+@media (max-width: 991px) {
+    a, button, input, select, textarea {
+        -webkit-tap-highlight-color: rgba(255, 152, 0, 0.2);
+        -webkit-touch-callout: none;
+    }
+    
+    button, .btn, a.btn {
+        touch-action: manipulation;
+    }
+}
+
+/* Optimizar transiciones para móviles */
+@media (max-width: 991px) {
+    * {
+        transition-duration: 0.2s !important;
+    }
+    
+    .navbar-collapse {
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+/* ==============================================================================
+   16. LANDSCAPE ORIENTATION
+   ============================================================================== */
+
+/* Tablets en landscape */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .banner_section {
+        padding: 50px 20px 40px;
+    }
+    
+    .banner_taital {
+        font-size: 48px;
+    }
+    
+    .kit-btn {
+        width: 130px;
+        height: 130px;
+    }
+    
+    .kit-img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Móviles en landscape */
+@media (max-width: 767px) and (orientation: landscape) {
+    .banner_section {
+        padding: 40px 20px 30px;
+    }
+    
+    .institutional-logo {
+        height: 70px;
+    }
+    
+    .banner-title-wrapper {
+        flex-direction: row;
+        gap: 30px;
+    }
+    
+    .floating-sidebar {
+        padding: 8px 10px;
+    }
+    
+    .sidebar-item {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* ==============================================================================
+   FIN DE OPTIMIZACIÓN MÓVIL
+   ============================================================================== */
