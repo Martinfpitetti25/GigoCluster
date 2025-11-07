@@ -404,6 +404,23 @@
          btnScrollTop.addEventListener('click', function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
          });
+
+         // Navbar Mobile - cerrar menú al hacer click en un link (Bootstrap 4 jQuery)
+         $('.navbar-nav .nav-link, .navbar-nav .nav-btn').on('click', function() {
+            if ($(window).width() <= 991) {
+               $('#navbarSupportedContent').collapse('hide');
+            }
+         });
+         
+         // Cambiar icono del toggler cuando se abre/cierra
+         $('#navbarSupportedContent').on('shown.bs.collapse', function() {
+            $('.navbar-toggler i').removeClass('fa-bars').addClass('fa-times');
+         });
+         
+         $('#navbarSupportedContent').on('hidden.bs.collapse', function() {
+            $('.navbar-toggler i').removeClass('fa-times').addClass('fa-bars');
+         });
       </script>
    </body>
 </html>
+

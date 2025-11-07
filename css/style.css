@@ -295,28 +295,9 @@ html, body {
     }
 }
 
-/* Botón flotante para volver al principio */
+/* Botón flotante para volver al principio - DESHABILITADO */
 #btn-scroll-top {
-    display: none;
-    position: fixed;
-    bottom: 32px;
-    right: 32px;
-    z-index: 999;
-    background: #ff9800;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 54px;
-    height: 54px;
-    box-shadow: 0 4px 18px 0 rgba(255,152,0,0.18), 0 2px 8px 0 rgba(0,0,0,0.10);
-    font-size: 2rem;
-    cursor: pointer;
-    transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-}
-#btn-scroll-top:hover {
-    background: #e67c00;
-    box-shadow: 0 6px 24px 0 rgba(255,152,0,0.22);
-    transform: scale(1.08);
+    display: none !important;
 }
 /* Marco para la imagen de GIGO TOYS */
 .about_img img {
@@ -337,178 +318,11 @@ html, body {
 
 /* Header sticky/fixed positioning */
 .header_section {
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 1000;
 }
 
-/* Mobile navbar centering fix */
-@media (max-width: 991px) {
-    .header_section {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        z-index: 1000;
-        padding: 8px 0;
-    }
-    
-    .custom_nav-container {
-        padding: 12px 15px;
-        margin: 8px auto;
-        width: 92%;
-        max-width: 100%;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.12);
-    }
-    
-    .navbar {
-        justify-content: space-between;
-        align-items: center;
-        padding: 0;
-    }
-    
-    .navbar-brand {
-        margin: 0;
-        font-size: 1.3rem;
-        padding: 8px 16px;
-    }
-    
-    .navbar-toggler {
-        border: none;
-        padding: 8px;
-        border-radius: 8px;
-        background: rgba(255, 152, 0, 0.1);
-        transition: all 0.3s ease;
-    }
-    
-    .navbar-toggler:focus {
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.2);
-    }
-    
-    .navbar-toggler:hover {
-        background: rgba(255, 152, 0, 0.2);
-    }
-    
-    .navbar-collapse {
-        text-align: center;
-        margin-top: 15px;
-        padding-top: 15px;
-        border-top: 1px solid rgba(0, 0, 0, 0.05);
-    }
-    
-    .navbar-nav {
-        align-items: center;
-        width: 100%;
-    }
-    
-    .navbar-nav .nav-item {
-        width: 100%;
-        text-align: center;
-        margin: 6px 0;
-    }
-    
-    .navbar-nav .nav-link,
-    .navbar-nav .nav-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        text-align: center;
-        margin: 0;
-        padding: 12px 20px;
-        font-size: 0.95rem;
-        border-radius: 24px;
-        transition: all 0.3s ease;
-    }
-    
-    .navbar-nav .nav-link i,
-    .navbar-nav .nav-btn i {
-        margin-right: 8px;
-        font-size: 1.1rem;
-    }
-    
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(255, 152, 0, 0.2);
-    }
-}
-
-@media (max-width: 768px) {
-    .custom_nav-container {
-        width: 94%;
-        padding: 10px 12px;
-    }
-    
-    .navbar-brand {
-        font-size: 1.2rem;
-        padding: 6px 12px;
-    }
-}
-
-@media (max-width: 576px) {
-    .custom_nav-container {
-        padding: 8px 10px;
-        margin: 10px auto;
-        width: 95%;
-        border-radius: 10px;
-    }
-    
-    .navbar-brand {
-        font-size: 1.1rem;
-        padding: 5px 10px;
-    }
-    
-    .navbar-toggler {
-        padding: 6px;
-    }
-    
-    .navbar-collapse {
-        margin-top: 12px;
-        padding-top: 12px;
-    }
-    
-    .navbar-nav .nav-item {
-        margin: 5px 0;
-    }
-    
-    .navbar-nav .nav-link,
-    .navbar-nav .nav-btn {
-        padding: 10px 16px;
-        font-size: 0.88rem;
-    }
-    
-    .navbar-nav .nav-link i,
-    .navbar-nav .nav-btn i {
-        font-size: 1rem;
-        margin-right: 6px;
-    }
-}
-
-@media (max-width: 400px) {
-    .custom_nav-container {
-        width: 96%;
-        padding: 8px;
-    }
-    
-    .navbar-brand {
-        font-size: 1rem;
-    }
-    
-    .navbar-nav .nav-link,
-    .navbar-nav .nav-btn {
-        padding: 9px 14px;
-        font-size: 0.82rem;
-    }
-    
-    .navbar-nav .nav-link i,
-    .navbar-nav .nav-btn i {
-        display: none;
-    }
-}
+/* Mobile navbar styles moved to mobile-optimization.css */
 
 .navbar-nav.ml-auto.text-uppercase.d-flex.align-items-center {
     gap: 18px;
@@ -1333,24 +1147,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Padding for fixed navbar on mobile */
-@media (max-width: 991px) {
-    body {
-        padding-top: 90px;
-    }
-}
-
-@media (max-width: 768px) {
-    body {
-        padding-top: 85px;
-    }
-}
-
-@media (max-width: 576px) {
-    body {
-        padding-top: 80px;
-    }
-}
+/* Padding for fixed navbar on mobile - moved to mobile-optimization.css */
 
 a {
     color: #1f1f1f;
@@ -1565,8 +1362,8 @@ button {
 .floating-sidebar {
     position: fixed;
     left: 20px;
-    top: 30%;
-    transform: translateY(-30%);
+    top: 55%;
+    transform: translateY(-50%);
     z-index: 999;
     display: flex;
     flex-direction: column;

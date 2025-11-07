@@ -55,6 +55,110 @@
       <!-- Custom Sidebar Dropdown Styles -->
       <style>
          /* ========================================
+            NAVBAR MOBILE - FORZAR FUNCIONAMIENTO
+            ======================================== */
+         @media (max-width: 991px) {
+            /* BRAND - Mostrar logo en móvil */
+            .navbar-brand.brand-logo {
+               background: transparent !important;
+               padding: 4px 8px !important;
+               border-radius: 0 !important;
+               box-shadow: none !important;
+               display: flex !important;
+               align-items: center !important;
+            }
+            
+            .navbar-logo {
+               height: 40px !important;
+               width: auto !important;
+               max-width: 150px !important;
+               object-fit: contain !important;
+            }
+            
+            /* Hamburger button */
+            .navbar-toggler {
+               border: 2px solid #ff9800 !important;
+               background: rgba(255, 152, 0, 0.1) !important;
+               padding: 8px 10px !important;
+               border-radius: 8px !important;
+            }
+            
+            .navbar-toggler-icon i {
+               color: #ff9800 !important;
+               font-size: 20px !important;
+            }
+            
+            /* Menu items */
+            .navbar-collapse {
+               background: white !important;
+               margin-top: 15px !important;
+               padding-top: 15px !important;
+               border-top: 2px solid rgba(255, 152, 0, 0.15) !important;
+            }
+            
+            .navbar-nav .nav-link,
+            .navbar-nav .nav-btn {
+               display: block !important;
+               width: 100% !important;
+               text-align: center !important;
+               padding: 12px 20px !important;
+               margin: 5px 0 !important;
+               border-radius: 25px !important;
+               border: 2px solid rgba(0, 0, 0, 0.1) !important;
+               background: white !important;
+               color: #333 !important;
+            }
+            
+            .navbar-nav .nav-btn {
+               background: linear-gradient(135deg, #ff9800 0%, #ff6f00 100%) !important;
+               color: white !important;
+               border-color: transparent !important;
+            }
+         }
+         
+         /* Logo en desktop */
+         @media (min-width: 992px) {
+            .navbar-logo {
+               height: 65px;
+               width: auto;
+               max-width: 250px;
+               object-fit: contain;
+            }
+            
+            .navbar-brand.brand-logo {
+               padding: 8px 20px;
+               background: linear-gradient(135deg, #ff9800 0%, #ff6f00 100%) !important;
+               border-radius: 12px;
+               box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+               transition: all 0.3s ease;
+            }
+            
+            .navbar-brand.brand-logo:hover {
+               transform: translateY(-2px) scale(1.05);
+               box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+            }
+         }
+         
+         /* Fondo para el logo en mobile */
+         @media (max-width: 991px) {
+            .navbar-brand.brand-logo {
+               background: linear-gradient(135deg, #ff9800 0%, #ff6f00 100%) !important;
+               padding: 6px 15px !important;
+               border-radius: 10px !important;
+               box-shadow: 0 3px 12px rgba(255, 152, 0, 0.3) !important;
+            }
+            
+            .navbar-brand.brand-logo:hover {
+               box-shadow: 0 4px 16px rgba(255, 152, 0, 0.4) !important;
+            }
+            
+            .navbar-logo {
+               height: 45px !important;
+               max-width: 170px !important;
+            }
+         }
+         
+         /* ========================================
             RESPONSIVE STYLES - MANTIENE DISEÑO ORIGINAL
             ======================================== */
          
@@ -813,11 +917,13 @@
       <header class="header_section">
         <div class="container">
             <nav class="navbar navbar-expand-lg custom_nav-container d-flex align-items-center">
-                <a class="navbar-brand brand-orange" href="">CLÚSTER</a>
+                <a class="navbar-brand brand-logo" href="index.html">
+                    <img src="images/logo-cluster.png" alt="Clúster Tecnológico" class="navbar-logo">
+                </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
-                       <i class="fa fa-bars" style="color: #fff; font-size: 24px;"></i>
+                       <i class="fa fa-bars"></i>
                     </span>
                 </button>
 
@@ -887,21 +993,15 @@
                      <div class="banner-hero-content">
                         <div class="banner-subtitle">Innovación en Robótica Educativa</div>
                         
-                        <!-- Title with Logos -->
+                        <!-- Title with Logo -->
                         <div class="banner-title-wrapper">
-                           <div class="logo-item logo-left">
-                              <img src="images/logo-isae.png" alt="ISAE - Instituto Superior Albert Einstein" class="institutional-logo">
-                           </div>
                            <h1 class="banner_taital">
                               <span class="banner-brand">GiGo</span>
-                              <span class="banner-slogan">Construye el Futuro</span>
+                              <span class="banner-slogan">Construye tu Futuro...!!</span>
                            </h1>
-                           <div class="logo-item logo-right">
-                              <img src="images/logo-cluster.png" alt="Clúster Tecnológico" class="institutional-logo">
-                           </div>
                         </div>
                         
-                        <p class="banner_text"><strong>Gigotoys</strong>, empresa taiwanesa líder en robótica educativa con reconocimiento mundial. Transformamos el aprendizaje en una experiencia divertida y enriquecedora, desarrollando habilidades STEAM a través del juego creativo.</p>
+                        <p class="banner_text"><strong>ISAE - Clúster Tecnológico</strong>, en alianza con<strong> Gigotoys</strong> marca taiwanesa de referencia mundial en robótica educativa, llevan al aula una propuesta que convierte el aprendizaje en juego, creatividad y tecnología. Juntos promovemos experiencias STEAM donde los estudiantes exploran, construyen y resuelven problemas reales mediante kits de robótica, programación y diseño, fortaleciendo las competencias que exige la educación del futuro.</p>
                         <div class="banner-features">
                            <div class="feature-item">
                               <i class="fa fa-trophy"></i>
@@ -1925,6 +2025,38 @@ document.querySelectorAll('.sidebar-item, .sidebar-subitem').forEach(item => {
       }
    });
 });
+
+// Navbar Mobile - cerrar menú al hacer click en un link
+$(document).ready(function() {
+   // Cerrar menú al hacer click en cualquier enlace
+   $('.navbar-nav .nav-link, .navbar-nav .nav-btn').on('click', function() {
+      if ($(window).width() <= 991) {
+         $('#navbarSupportedContent').collapse('hide');
+      }
+   });
+   
+   // Cambiar icono del toggler cuando se abre/cierra
+   $('.navbar-toggler').on('click', function() {
+      setTimeout(() => {
+         const icon = $(this).find('i');
+         if ($('#navbarSupportedContent').hasClass('show')) {
+            icon.removeClass('fa-bars').addClass('fa-times');
+         } else {
+            icon.removeClass('fa-times').addClass('fa-bars');
+         }
+      }, 10);
+   });
+   
+   // También cambiar icono cuando el collapse cambia de estado
+   $('#navbarSupportedContent').on('shown.bs.collapse', function() {
+      $('.navbar-toggler i').removeClass('fa-bars').addClass('fa-times');
+   });
+   
+   $('#navbarSupportedContent').on('hidden.bs.collapse', function() {
+      $('.navbar-toggler i').removeClass('fa-times').addClass('fa-bars');
+   });
+});
 </script>
    </body>
 </html>
+
