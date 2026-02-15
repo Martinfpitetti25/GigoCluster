@@ -7,24 +7,24 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       
       <!-- site metas -->
-      <title>Clúster ISAE - Distribuidores Oficiales Gigo | Robótica Educativa</title>
-      <meta name="description" content="Distribuidores oficiales de kits Gigo en Argentina. Robótica educativa STEAM para instituciones. Kits micro:bit, programación, energías renovables. ISAE Clúster Tecnológico.">
-      <meta name="keywords" content="gigo argentina, kits robotica educativa, micro:bit, programacion para niños, STEAM, robótica escolar, kits educativos, ISAE, Clúster Tecnológico, gigo toys, educacion tecnologica">
-      <meta name="author" content="ISAE - Instituto Superior Albert Einstein">
+      <title>Clúster KIRO - Distribuidores Oficiales Gigo | Robótica Educativa</title>
+      <meta name="description" content="Distribuidores oficiales de kits Gigo en Argentina. Robótica educativa STEAM para instituciones. Kits micro:bit, programación, energías renovables. KIRO Clúster Tecnológico.">
+      <meta name="keywords" content="gigo argentina, kits robotica educativa, micro:bit, programacion para niños, STEAM, robótica escolar, kits educativos, KIRO, Clúster Tecnológico, gigo toys, educacion tecnologica">
+      <meta name="author" content="KIRO - Instituto Superior Albert Einstein">
       <meta name="robots" content="index, follow">
       <meta name="language" content="Spanish">
       
       <!-- Open Graph / Facebook -->
       <meta property="og:type" content="website">
       <meta property="og:url" content="https://gigocluster.com/">
-      <meta property="og:title" content="Clúster ISAE - Distribuidores Oficiales Gigo | Robótica Educativa">
+      <meta property="og:title" content="Clúster KIRO - Distribuidores Oficiales Gigo | Robótica Educativa">
       <meta property="og:description" content="Kits educativos Gigo para robótica y programación STEAM. Distribuidores oficiales en Argentina. Soluciones para instituciones educativas.">
       <meta property="og:image" content="https://gigocluster.com/images/about-img.png">
       
       <!-- Twitter -->
       <meta property="twitter:card" content="summary_large_image">
       <meta property="twitter:url" content="https://gigocluster.com/">
-      <meta property="twitter:title" content="Clúster ISAE - Distribuidores Oficiales Gigo | Robótica Educativa">
+      <meta property="twitter:title" content="Clúster KIRO - Distribuidores Oficiales Gigo | Robótica Educativa">
       <meta property="twitter:description" content="Kits educativos Gigo para robótica y programación STEAM. Distribuidores oficiales en Argentina.">
       <meta property="twitter:image" content="https://gigocluster.com/images/about-img.png">
       
@@ -77,10 +77,10 @@
             
             /* LOGO - Diseño elegante */
             .navbar-brand.brand-logo {
-               background: linear-gradient(135deg, #ff9800 0%, #ff6f00 100%) !important;
+               background: linear-gradient(135deg, var(--azul-medio) 0%, var(--cian) 100%) !important;
                padding: 8px 16px !important;
                border-radius: 12px !important;
-               box-shadow: 0 4px 12px rgba(255, 152, 0, 0.25) !important;
+               box-shadow: 0 4px 12px rgba(19, 96, 158, 0.18) !important;
                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
                display: flex !important;
                align-items: center !important;
@@ -88,7 +88,7 @@
             
             .navbar-brand.brand-logo:active {
                transform: scale(0.95);
-               box-shadow: 0 2px 8px rgba(255, 152, 0, 0.3) !important;
+               box-shadow: 0 2px 8px rgba(19, 96, 158, 0.22) !important;
             }
             
             .navbar-logo {
@@ -102,11 +102,11 @@
             /* HAMBURGER BUTTON - Diseño moderno */
             .navbar-toggler {
                border: none !important;
-               background: linear-gradient(135deg, rgba(255, 152, 0, 0.1) 0%, rgba(255, 111, 0, 0.15) 100%) !important;
+               background: linear-gradient(135deg, rgba(19, 96, 158, 0.10) 0%, rgba(42, 169, 214, 0.15) 100%) !important;
                padding: 10px 12px !important;
                border-radius: 12px !important;
                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-               box-shadow: 0 2px 8px rgba(255, 152, 0, 0.15);
+               box-shadow: 0 2px 8px rgba(19, 96, 158, 0.10);
                position: relative;
                overflow: hidden;
             }
@@ -119,7 +119,7 @@
                width: 0;
                height: 0;
                border-radius: 50%;
-               background: rgba(255, 152, 0, 0.2);
+               background: rgba(19, 96, 158, 0.12);
                transform: translate(-50%, -50%);
                transition: width 0.6s, height 0.6s;
             }
@@ -131,7 +131,7 @@
             
             .navbar-toggler:focus {
                outline: none !important;
-               box-shadow: 0 0 0 3px rgba(255, 152, 0, 0.25) !important;
+               box-shadow: 0 0 0 3px rgba(19, 96, 158, 0.18) !important;
             }
             
             .navbar-toggler:active {
@@ -145,7 +145,7 @@
             }
             
             .navbar-toggler-icon i {
-               color: #ff9800 !important;
+               color: var(--azul-medio) !important;
                font-size: 22px !important;
                transition: all 0.3s ease !important;
                position: relative;
@@ -218,13 +218,13 @@
                margin: 0 !important;
                border-radius: 12px !important;
                border: 2px solid transparent !important;
-               background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%) !important;
-               color: #2c3e50 !important;
+               background: linear-gradient(135deg, var(--blanco-soft) 0%, #ffffff 100%) !important;
+               color: var(--azul-texto) !important;
                font-weight: 600 !important;
                font-size: 14px !important;
                letter-spacing: 0.5px;
                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-               box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+               box-shadow: 0 2px 8px rgba(19, 96, 158, 0.06);
                position: relative;
                overflow: hidden;
             }
@@ -236,7 +236,7 @@
                left: -100%;
                width: 100%;
                height: 100%;
-               background: linear-gradient(90deg, transparent, rgba(255, 152, 0, 0.1), transparent);
+               background: linear-gradient(90deg, transparent, rgba(42, 169, 214, 0.10), transparent);
                transition: left 0.5s;
             }
             
@@ -250,10 +250,10 @@
             }
             
             .navbar-nav .nav-link:hover {
-               background: linear-gradient(135deg, #fff7ed 0%, #ffffff 100%) !important;
-               border-color: rgba(255, 152, 0, 0.3) !important;
+               background: linear-gradient(135deg, var(--cian-claro) 0%, #ffffff 100%) !important;
+               border-color: var(--cian) !important;
                transform: translateY(-2px);
-               box-shadow: 0 4px 12px rgba(255, 152, 0, 0.15);
+               box-shadow: 0 4px 12px rgba(42, 169, 214, 0.15);
             }
             
             .navbar-nav .nav-link:hover i {
@@ -262,22 +262,22 @@
             
             .navbar-nav .nav-link:active {
                transform: translateY(0);
-               box-shadow: 0 2px 6px rgba(255, 152, 0, 0.2);
+               box-shadow: 0 2px 6px rgba(42, 169, 214, 0.18);
             }
             
             .navbar-nav .nav-item.active .nav-link {
-               background: linear-gradient(135deg, rgba(255, 152, 0, 0.15) 0%, rgba(255, 111, 0, 0.1) 100%) !important;
-               border-color: rgba(255, 152, 0, 0.4) !important;
-               color: #ff6f00 !important;
+               background: linear-gradient(135deg, rgba(42, 169, 214, 0.10) 0%, rgba(19, 96, 158, 0.08) 100%) !important;
+               border-color: var(--cian) !important;
+               color: var(--azul-medio) !important;
                font-weight: 700 !important;
             }
             
             /* BOTÓN FAQ - Destacado */
             .navbar-nav .nav-btn {
-               background: linear-gradient(135deg, #ff9800 0%, #ff6f00 100%) !important;
-               color: white !important;
+               background: linear-gradient(135deg, var(--violeta-medio) 0%, var(--cian) 100%) !important;
+               color: #fff !important;
                border: none !important;
-               box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3) !important;
+               box-shadow: 0 4px 12px rgba(75, 79, 199, 0.18) !important;
                font-weight: 700 !important;
                position: relative;
                overflow: hidden;
@@ -302,9 +302,9 @@
             }
             
             .navbar-nav .nav-btn:hover {
-               background: linear-gradient(135deg, #fb8c00 0%, #f57c00 100%) !important;
+               background: linear-gradient(135deg, var(--cian) 0%, var(--cian-claro) 100%) !important;
                transform: translateY(-2px);
-               box-shadow: 0 6px 16px rgba(255, 152, 0, 0.4) !important;
+               box-shadow: 0 6px 16px rgba(42, 169, 214, 0.22) !important;
             }
             
             .navbar-nav .nav-btn:active {
@@ -327,15 +327,15 @@
             
             .navbar-brand.brand-logo {
                padding: 8px 20px;
-               background: linear-gradient(135deg, #ff9800 0%, #ff6f00 100%) !important;
+               background: linear-gradient(135deg, var(--azul-medio) 0%, var(--cian) 100%) !important;
                border-radius: 12px;
-               box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+               box-shadow: 0 4px 15px rgba(19, 96, 158, 0.18);
                transition: all 0.3s ease;
             }
             
             .navbar-brand.brand-logo:hover {
                transform: translateY(-2px) scale(1.05);
-               box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+               box-shadow: 0 6px 20px rgba(42, 169, 214, 0.22);
             }
          }
          
@@ -1192,7 +1192,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg custom_nav-container d-flex align-items-center">
                 <a class="navbar-brand brand-logo" href="index.html">
-                    <img src="images/logo-cluster.png" alt="Clúster Tecnológico" class="navbar-logo">
+                    <img src="images/kiro sin fondo.png" alt="Clúster KIRO" class="navbar-logo">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -1255,12 +1255,12 @@
                         <!-- Title with Logo -->
                         <div class="banner-title-wrapper">
                            <h1 class="banner_taital">
-                              <span class="banner-brand">Gigo</span>
+                              <span class="banner-brand">KIRO</span>
                               <span class="banner-slogan">Construye tu Futuro...!!</span>
                            </h1>
                         </div>
                         
-                        <p class="banner_text"><strong>ISAE - Clúster Tecnológico</strong>, en alianza con <strong>Gigo</strong>, marca taiwanesa de referencia mundial en robótica educativa, llevan al aula una propuesta que convierte el aprendizaje en juego, creatividad y tecnología. Juntos promovemos experiencias STEAM donde los estudiantes exploran, construyen y resuelven problemas reales mediante kits de robótica, programación y diseño, fortaleciendo las competencias que exige la educación del futuro.</p>
+                        <p class="banner_text"><strong>Clúster KIRO </strong>, en alianza con <strong>Gigo</strong>, marca taiwanesa de referencia mundial en robótica educativa, llevan al aula una propuesta que convierte el aprendizaje en juego, creatividad y tecnología. Juntos promovemos experiencias STEAM donde los estudiantes exploran, construyen y resuelven problemas reales mediante kits de robótica, programación y diseño, fortaleciendo las competencias que exige la educación del futuro.</p>
                         <div class="banner-features">
                            <div class="feature-item">
                               <i class="fa fa-trophy"></i>
@@ -1441,7 +1441,7 @@
             <div class="row">
                <div class="col-md-12">
                   <h1 class="models_taital">Nuestros kits Gigo</h1>
-                  <p class="text-center" style="font-size: 1.2rem; color: #ff9800; font-weight: 600; margin-top: 15px; margin-bottom: 30px;">
+                  <p class="text-center" style="font-size: 1.2rem; color: var(--cian); font-weight: 600; margin-top: 15px; margin-bottom: 30px;">
                      <i class="fa fa-check-circle"></i> Todos los kits vienen con secuencias didácticas y propuestas pedagógicas ya listas
                   </p>
                </div>
@@ -2156,7 +2156,7 @@ Bloques modulares de Bio-ABS (certificados en la Unión Europea) para un aprendi
                      var style = document.createElement('style');
                      style.textContent = `
                         .touch-feedback {
-                           background: linear-gradient(135deg, rgba(255, 152, 0, 0.2) 0%, rgba(255, 111, 0, 0.15) 100%) !important;
+                           background: linear-gradient(135deg, rgba(42, 169, 214, 0.12) 0%, rgba(79, 195, 230, 0.10) 100%) !important;
                            transform: scale(0.98) !important;
                         }
                         
