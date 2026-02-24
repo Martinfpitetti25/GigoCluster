@@ -310,10 +310,41 @@ html, body {
     }
 }
 
-/* Botón flotante para volver al principio - DESHABILITADO */
+/* Botón flotante para volver al principio */
 #btn-scroll-top {
-    display: none !important;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #13609e 0%, #00c4cc 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(19, 96, 158, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    font-size: 22px;
 }
+
+#btn-scroll-top:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(19, 96, 158, 0.5);
+    background: linear-gradient(135deg, #0e4d7f 0%, #00a8b0 100%);
+}
+
+#btn-scroll-top:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+#btn-scroll-top i {
+    font-size: 22px;
+}
+
 /* Marco para la imagen de GIGO TOYS */
 .about_img img {
     border: 4px solid var(--azul-medio);
@@ -672,6 +703,11 @@ html, body {
     line-height: 1.8;
     margin: 0;
     text-align: justify;
+}
+
+.info-card-text-horizontal strong {
+    font-weight: 700;
+    color: #333;
 }
 
 /* Estilos especiales para la tarjeta ISAE */
@@ -2327,7 +2363,9 @@ button {
     width: 100%;
     display: inline-block;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
     color: #ffffff;
     background: linear-gradient(135deg, var(--azul-medio), var(--azul-brillante));
     padding: 12px 25px;
@@ -3480,16 +3518,19 @@ textarea#comment::placeholder {
 .kit-tag {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
-    padding: 8px 16px;
-    border-radius: 25px;
-    font-size: 0.9rem;
-    font-weight: 600;
+    gap: 5px;
+    padding: 4px 10px;
+    border-radius: 16px;
+    font-size: 0.7rem;
+    font-weight: 500;
     white-space: nowrap;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
     position: relative;
     overflow: hidden;
+    background: var(--cian-claro);
+    color: #fff;
+    border: none;
 }
 
 .kit-tag::before {
@@ -3499,115 +3540,62 @@ textarea#comment::placeholder {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+    background: transparent;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: none;
 }
 
 .kit-tag:hover::before {
-    opacity: 1;
+    opacity: 0;
 }
 
 .kit-tag i {
-    font-size: 1.1rem;
+    font-size: 0.85rem;
 }
 
-/* Edad recomendada */
-.kit-tag-age {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #fff;
-    border: none;
-}
-
-.kit-tag-age:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-}
-
-/* Sin PC - Verde elegante */
-.kit-tag-pc {
-    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-    color: #fff;
-    border: none;
-}
-
-.kit-tag-pc:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(56, 239, 125, 0.4);
-}
-
-/* Requiere PC - Rojo/Naranja llamativo */
-.kit-tag-pc.kit-tag-required {
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
-    color: #fff;
-    border: none;
-    animation: pulse-required 2s infinite;
-}
-
-@keyframes pulse-required {
-    0%, 100% {
-        box-shadow: 0 2px 8px rgba(238, 90, 111, 0.3);
-    }
-    50% {
-        box-shadow: 0 4px 16px rgba(238, 90, 111, 0.6);
-    }
-}
-
-.kit-tag-pc.kit-tag-required:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(238, 90, 111, 0.5);
-    animation: none;
-}
-
-/* Compatibilidad - Naranja/Dorado */
-.kit-tag-compat {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    color: #fff;
-    border: none;
-}
-
-.kit-tag-compat:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(245, 87, 108, 0.4);
-}
-
-/* Requerimientos técnicos - Azul cyan */
+/* Todos los tags tienen el mismo estilo - celeste clarito */
+.kit-tag-age,
+.kit-tag-pc,
+.kit-tag-pc.kit-tag-required,
+.kit-tag-compat,
 .kit-tag-req {
-    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    color: #fff;
-    border: none;
+    /* Estilos heredados del .kit-tag base */
 }
 
+/* Sin hover effects */
+.kit-tag-age:hover,
+.kit-tag-pc:hover,
+.kit-tag-pc.kit-tag-required:hover,
+.kit-tag-compat:hover,
 .kit-tag-req:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 242, 254, 0.4);
+    /* Sin animación */
 }
 
 /* Responsive tags */
 @media (max-width: 768px) {
     .kit-tags {
-        gap: 8px;
-    }
-    
-    .kit-tag {
-        font-size: 0.8rem;
-        padding: 6px 12px;
         gap: 5px;
     }
     
+    .kit-tag {
+        font-size: 0.65rem;
+        padding: 3px 8px;
+        gap: 3px;
+    }
+    
     .kit-tag i {
-        font-size: 1rem;
+        font-size: 0.75rem;
     }
 }
 
 @media (max-width: 480px) {
     .kit-tag {
-        font-size: 0.75rem;
-        padding: 5px 10px;
+        font-size: 0.6rem;
+        padding: 3px 7px;
     }
     
     .kit-tag i {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
 }
 

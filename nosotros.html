@@ -53,10 +53,10 @@
             
             /* LOGO - Diseño elegante */
             .navbar-brand.brand-logo {
-               background: linear-gradient(135deg, #ff9800 0%, #ff6f00 100%) !important;
+               background: linear-gradient(135deg, var(--azul-medio) 0%, var(--cian) 100%) !important;
                padding: 8px 16px !important;
                border-radius: 12px !important;
-               box-shadow: 0 4px 12px rgba(255, 152, 0, 0.25) !important;
+               box-shadow: 0 4px 12px rgba(19, 96, 158, 0.18) !important;
                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
                display: flex !important;
                align-items: center !important;
@@ -64,7 +64,7 @@
             
             .navbar-brand.brand-logo:active {
                transform: scale(0.95);
-               box-shadow: 0 2px 8px rgba(255, 152, 0, 0.3) !important;
+               box-shadow: 0 2px 8px rgba(19, 96, 158, 0.22) !important;
             }
             
             .navbar-logo {
@@ -303,15 +303,15 @@
             
             .navbar-brand.brand-logo {
                padding: 8px 20px;
-               background: linear-gradient(135deg, #ff9800 0%, #ff6f00 100%) !important;
+               background: linear-gradient(135deg, var(--azul-medio) 0%, var(--cian) 100%) !important;
                border-radius: 12px;
-               box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+               box-shadow: 0 4px 15px rgba(19, 96, 158, 0.18);
                transition: all 0.3s ease;
             }
             
             .navbar-brand.brand-logo:hover {
                transform: translateY(-2px) scale(1.05);
-               box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+               box-shadow: 0 6px 20px rgba(42, 169, 214, 0.22);
             }
          }
          
@@ -492,7 +492,9 @@
       <header class="header_section">
         <div class="container">
             <nav class="navbar navbar-expand-lg custom_nav-container d-flex align-items-center">
-                <a class="navbar-brand brand-orange" href="index.html">CLÚSTER</a>
+                <a class="navbar-brand brand-logo" href="index.html">
+                    <img src="images/kiro sin fondo.png" alt="Clúster KIRO" class="navbar-logo">
+                </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
@@ -533,10 +535,6 @@
          <a href="#cluster" class="sidebar-item" data-tooltip="Clúster">
             <i class="fa fa-cogs"></i>
             <span class="sidebar-tooltip">Clúster</span>
-         </a>
-         <a href="#cursos" class="sidebar-item" data-tooltip="Cursos">
-            <i class="fa fa-book"></i>
-            <span class="sidebar-tooltip">Cursos</span>
          </a>
          <a href="#equipo" class="sidebar-item" data-tooltip="Equipo">
             <i class="fa fa-users"></i>
@@ -584,14 +582,14 @@
                            <div class="col-md-7">
                               <div class="info-card-body-horizontal">
                                  <div class="mb-3">
-                                    <span class="badge badge-success" style="font-size: 1.2rem; padding: 12px 25px; font-weight: 700;">
-                                       <i class="fa fa-calendar mr-2"></i>MÁS DE 30 AÑOS DE TRAYECTORIA EN EDUCACIÓN TECNOLÓGICA
-                                    </span>
+                                    <!-- Badge eliminado -->
                                  </div>
                                  <h3 class="info-card-title-horizontal">ISAE - Instituto Superior Albert Einstein</h3>
                                  <h5 class="info-card-subtitle-horizontal">"La alegría de ver y entender es el más perfecto don de la naturaleza". -A. Einstein</h5>
 
-                                 <p class="info-card-text-horizontal">Desde hace más de tres décadas, en ISAE formamos a estudiantes desarrollando competencias en robótica y programación, trabajando a través de talleres, cursos específicos y proyectos educativos basados en el modelo STEAM. Sostenemos una educación comprometida con la libertad, la convivencia democrática, la ética, la justicia y la equidad, poniendo especial énfasis en el cuidado del ambiente y de los recursos naturales.</p>
+                                    <p class="info-card-text-horizontal">
+                                       Desde hace más de tres décadas, en ISAE formamos a estudiantes desarrollando <strong>competencias en robótica y programación</strong>, trabajando a través de <strong>talleres, cursos específicos y proyectos educativos basados en el modelo STEAM</strong>. Sostenemos una educación comprometida con la <strong>libertad, la convivencia democrática, la ética, la justicia y la equidad</strong>, poniendo especial énfasis en el <strong>cuidado del ambiente y de los recursos naturales</strong>.
+                                    </p>
 
                                  <div class="isae-highlights">
                                     <div class="highlight-item">
@@ -829,165 +827,6 @@
                                  <div class="alliance-image-bottom mt-4">
                                     <img src="images/gigosconchicos.jpeg" alt="Estudiantes trabajando con kits" style="width: 100%; height: 200px; object-fit: cover; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                                     <p style="text-align: center; font-size: 12px; color: #666; margin-top: 8px; font-style: italic;">Aprendizaje práctico con metodología GIGO</p>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               
-               <!-- Sección Cursos Polo-Tecnológico -->
-               <div class="row mb-5" id="cursos">
-                  <div class="col-12">
-                     <div class="info-card-horizontal capacitaciones-card">
-                        <div class="row">
-                           <div class="col-12">
-                              <div class="info-card-body-horizontal">
-                                 <h3 class="info-card-title-horizontal">CURSOS TECNO-ALIADOS</h3>
-                                 <h5 class="info-card-subtitle-horizontal">Formación técnica y profesional especializada</h5>
-                                 <p class="info-card-text-horizontal">Cursos y talleres especializados dictados por expertos aliados del clúster, diseñados para potenciar habilidades tecnológicas y profesionales en nuestra comunidad educativa.</p>
-                                 
-                                 <!-- Logos de Sponsors/Aliados -->
-                                 <div class="sponsors-section mt-4 mb-4">
-                                    <div class="text-center mb-3">
-                                       <h6 style="color: #1e3c72; font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px;">Nuestros Aliados Estratégicos</h6>
-                                    </div>
-                                    <div class="sponsors-container" style="display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; padding: 25px; background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); border-radius: 12px; box-shadow: 0 3px 12px rgba(0,0,0,0.08);">
-                                       <!-- Sponsor 1 -->
-                                       <div class="sponsor-logo-wrapper" style="transition: all 0.3s ease;">
-                                          <div style="background: white; padding: 15px 25px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; min-width: 140px; min-height: 80px;">
-                                             <img src="images/ISAE30_logo.jpeg" alt="Aliado 1" style="max-width: 120px; max-height: 60px; object-fit: contain; filter: grayscale(0); transition: all 0.3s ease;" onmouseover="this.style.filter='grayscale(0) brightness(1.1)'; this.style.transform='scale(1.05)'" onmouseout="this.style.filter='grayscale(0)'; this.style.transform='scale(1)'">
-                                          </div>
-                                       </div>
-                                       
-                                       <!-- Sponsor 2 -->
-                                       <div class="sponsor-logo-wrapper" style="transition: all 0.3s ease;">
-                                          <div style="background: white; padding: 15px 25px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; min-width: 140px; min-height: 80px;">
-                                             <img src="images/Polo_logo.jpeg" alt="Aliado 2" style="max-width: 120px; max-height: 60px; object-fit: contain; filter: grayscale(0); transition: all 0.3s ease;" onmouseover="this.style.filter='grayscale(0) brightness(1.1)'; this.style.transform='scale(1.05)'" onmouseout="this.style.filter='grayscale(0)'; this.style.transform='scale(1)'">
-                                          </div>
-                                       </div>
-                                       
-                                       <!-- Sponsor 3 -->
-                                       <div class="sponsor-logo-wrapper" style="transition: all 0.3s ease;">
-                                          <div style="background: white; padding: 15px 25px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center; min-width: 140px; min-height: 80px;">
-                                             <img src="images/Clúster LOGO.png" alt="Aliado 3" style="max-width: 120px; max-height: 60px; object-fit: contain; filter: grayscale(0); transition: all 0.3s ease;" onmouseover="this.style.filter='grayscale(0) brightness(1.1)'; this.style.transform='scale(1.05)'" onmouseout="this.style.filter='grayscale(0)'; this.style.transform='scale(1)'">
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
-                                 
-                                 <!-- Grilla de cursos -->
-                                 <div class="courses-grid mt-4">
-                                    <!-- Primera fila: 2 cursos -->
-                                    <div class="row mb-3">
-                                       <div class="col-lg-6 mb-3">
-                                          <div class="course-card" data-course="curso1">
-                                             <div class="course-icon-wrapper">
-                                                <i class="fa fa-line-chart course-icon"></i>
-                                             </div>
-                                             <div class="course-content">
-                                                <h6 class="course-title">De Ahorrista a Inversor</h6>
-                                                <p class="course-description">Aprende a gestionar tus finanzas personales y descubre el mundo de las inversiones inteligentes.</p>
-                                                <span class="course-badge">Nivel Inicial</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-lg-6 mb-3">
-                                          <div class="course-card" data-course="curso2">
-                                             <div class="course-icon-wrapper">
-                                                <i class="fa fa-android course-icon"></i>
-                                             </div>
-                                             <div class="course-content">
-                                                <h6 class="course-title">Robótica Inicial</h6>
-                                                <p class="course-description">Primeros pasos en robótica educativa. Aprende a construir y programar tus propios robots.</p>
-                                                <span class="course-badge">Nivel Básico</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    
-                                    <div class="row mb-3">
-                                       <div class="col-lg-6 mb-3">
-                                          <div class="course-card" data-course="curso3">
-                                             <div class="course-icon-wrapper">
-                                                <i class="fa fa-cube course-icon"></i>
-                                             </div>
-                                             <div class="course-content">
-                                                <h6 class="course-title">Diseño e Impresión 3D</h6>
-                                                <p class="course-description">Modela objetos 3D y materializa tus ideas usando tecnología de impresión tridimensional.</p>
-                                                <span class="course-badge">Intermedio</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-lg-6 mb-3">
-                                          <div class="course-card" data-course="curso4">
-                                             <div class="course-icon-wrapper">
-                                                <i class="fa fa-user-circle course-icon"></i>
-                                             </div>
-                                             <div class="course-content">
-                                                <h6 class="course-title">Docencia y Entornos Digitales</h6>
-                                                <p class="course-description">Herramientas y estrategias para llevar la educación al mundo digital de forma efectiva.</p>
-                                                <span class="course-badge">Docentes</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    
-                                    <!-- Segunda sección de cursos -->
-                                    <div class="row mb-3">
-                                       <div class="col-lg-6 mb-3">
-                                          <div class="course-card" data-course="curso5">
-                                             <div class="course-icon-wrapper">
-                                                <i class="fa fa-code course-icon"></i>
-                                             </div>
-                                             <div class="course-content">
-                                                <h6 class="course-title">Programador Python Básico</h6>
-                                                <p class="course-description">Domina los fundamentos de Python, uno de los lenguajes más demandados en el mercado.</p>
-                                                <span class="course-badge">Programación</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-lg-6 mb-3">
-                                          <div class="course-card" data-course="curso6">
-                                             <div class="course-icon-wrapper">
-                                                <i class="fa fa-video-camera course-icon"></i>
-                                             </div>
-                                             <div class="course-content">
-                                                <h6 class="course-title">Productor de Contenidos Digitales</h6>
-                                                <p class="course-description">Crea contenido audiovisual profesional para redes sociales y plataformas digitales.</p>
-                                                <span class="course-badge">Creativo</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
-                                    
-                                    <div class="row">
-                                       <div class="col-lg-6 mb-3">
-                                          <div class="course-card" data-course="curso7">
-                                             <div class="course-icon-wrapper">
-                                                <i class="fa fa-laptop course-icon"></i>
-                                             </div>
-                                             <div class="course-content">
-                                                <h6 class="course-title">Desarrollo Web Junior</h6>
-                                                <p class="course-description">Aprende HTML, CSS y JavaScript para crear tus propias páginas web desde cero.</p>
-                                                <span class="course-badge">Web Dev</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="col-lg-6 mb-3">
-                                          <div class="course-card" data-course="curso8">
-                                             <div class="course-icon-wrapper">
-                                                <i class="fa fa-home course-icon"></i>
-                                             </div>
-                                             <div class="course-content">
-                                                <h6 class="course-title">Domótica Inicial</h6>
-                                                <p class="course-description">Automatiza tu hogar con tecnología IoT. Controla luces, temperatura y seguridad inteligente.</p>
-                                                <span class="course-badge">IoT</span>
-                                             </div>
-                                          </div>
-                                       </div>
-                                    </div>
                                  </div>
                               </div>
                            </div>
