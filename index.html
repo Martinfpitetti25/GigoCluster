@@ -1071,99 +1071,6 @@
             }
          }
          
-         /* ========================================
-            BOTÓN FLOTANTE VOLVER A KITS
-            ======================================== */
-         
-         #btn-back-to-kits {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(135deg, #ff9800 0%, #ff6f00 100%);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(255, 152, 0, 0.4);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 999;
-            font-size: 22px;
-         }
-         
-         #btn-back-to-kits:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 6px 20px rgba(255, 152, 0, 0.5);
-            background: linear-gradient(135deg, #fb8c00 0%, #f57c00 100%);
-         }
-         
-         #btn-back-to-kits:active {
-            transform: translateY(-1px) scale(0.98);
-         }
-         
-         #btn-back-to-kits i {
-            font-size: 22px;
-         }
-         
-         /* Tooltip del botón kits */
-         .btn-kits-tooltip {
-            position: absolute;
-            right: 70px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: linear-gradient(135deg, #ff9800 0%, #ff6f00 100%);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            white-space: nowrap;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
-            pointer-events: none;
-            z-index: 1000;
-         }
-         
-         #btn-back-to-kits:hover .btn-kits-tooltip {
-            opacity: 1;
-            visibility: visible;
-            right: 75px;
-         }
-         
-         /* Posicionar arriba del botón scroll-top si ambos están visibles */
-         #btn-scroll-top {
-            bottom: 90px;
-         }
-         
-         /* Mobile responsive */
-         @media (max-width: 768px) {
-            #btn-back-to-kits {
-               width: 50px;
-               height: 50px;
-               bottom: 145px;
-               right: 15px;
-               font-size: 20px;
-            }
-            
-            #btn-back-to-kits i {
-               font-size: 20px;
-            }
-            
-            .btn-kits-tooltip {
-               display: none;
-            }
-            
-            #btn-scroll-top {
-               bottom: 80px;
-            }
-         }
-         
          /* Ensure images don't overflow */
          img {
             max-width: 100%;
@@ -1234,6 +1141,10 @@
          <a href="#about" class="sidebar-item" data-tooltip="Presentación">
             <i class="fa fa-info-circle"></i>
             <span class="sidebar-tooltip">Presentación</span>
+         </a>
+         <a href="#kits" class="sidebar-item" data-tooltip="Nuestros Kits">
+            <i class="fa fa-cubes"></i>
+            <span class="sidebar-tooltip">Nuestros Kits</span>
          </a>
          <a href="#contacto" class="sidebar-item" data-tooltip="Contacto">
             <i class="fa fa-envelope"></i>
@@ -2045,9 +1956,9 @@ Bloques modulares de <strong>Bio-ABS (certificados en la Unión Europea)</strong
                         </a>
                      </li>
                      <li>
-                        <a href="mailto:cluster.isae.lr@gmail.com">
+                        <a href="mailto:cluster.kiro.lr@gmail.com">
                            <i class="fa fa-envelope" aria-hidden="true"></i>
-                           <span class="padding_left_15">cluster.isae.lr@gmail.com</span>
+                           <span class="padding_left_15">cluster.kiro.lr@gmail.com</span>
                         </a>
                      </li>
                   </ul>
@@ -2055,7 +1966,7 @@ Bloques modulares de <strong>Bio-ABS (certificados en la Unión Europea)</strong
             </div>
             <div class="social_icon">
                <ul>
-                  <li><a href="https://www.instagram.com/isae.cluster" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                  <li><a href="https://www.instagram.com/clusterkiro/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                </ul>
             </div>
                   <div class="contact-address" style="margin-top:22px; text-align:center; color:#888; font-size:1rem;">
@@ -2074,11 +1985,6 @@ Bloques modulares de <strong>Bio-ABS (certificados en la Unión Europea)</strong
             <i class="fa fa-arrow-up"></i>
          </button>
          
-         <!-- Botón flotante volver a kits -->
-         <button id="btn-back-to-kits">
-            <i class="fa fa-cubes"></i>
-            <span class="btn-kits-tooltip">Nuestros Kits!</span>
-         </button>
          <!-- copyright section start -->
 
       <!-- Javascript files - CDN para garantizar funcionamiento -->
@@ -2264,33 +2170,6 @@ Bloques modulares de <strong>Bio-ABS (certificados en la Unión Europea)</strong
             });
             btnScrollTop.addEventListener('click', function() {
                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-            
-            // Botón flotante volver a kits
-            const btnBackToKits = document.getElementById('btn-back-to-kits');
-            const bannerSection = document.getElementById('inicio');
-            
-            window.addEventListener('scroll', function() {
-               if (bannerSection) {
-                  const bannerRect = bannerSection.getBoundingClientRect();
-                  const windowHeight = window.innerHeight;
-                  
-                  // Mostrar botón cuando el usuario salió de la sección de kits
-                  if (bannerRect.bottom < 0) {
-                     btnBackToKits.style.display = 'flex';
-                  } else {
-                     btnBackToKits.style.display = 'none';
-                  }
-               }
-            });
-            
-            btnBackToKits.addEventListener('click', function() {
-               const kitsSelector = document.getElementById('kits-selector');
-               if (kitsSelector) {
-                  kitsSelector.scrollIntoView({behavior: 'smooth', block: 'center'});
-               } else {
-                  document.getElementById('inicio').scrollIntoView({behavior: 'smooth'});
-               }
             });
          </script>
          <script>
